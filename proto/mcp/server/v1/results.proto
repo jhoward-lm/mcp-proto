@@ -1,0 +1,266 @@
+edition = "2023";
+
+package mcp.server.v1;
+
+import "google/protobuf/struct.proto";
+import "mcp/server/v1/capabilities.proto";
+import "mcp/server/v1/common.proto";
+
+option optimize_for = CODE_SIZE;
+
+// The contents of a specific resource or sub-resource in binary form.
+message BlobResourceContents {
+  // The URI of this resource.
+  string uri = 1;
+
+  // The MIME type of this resource, if known.
+  string mime_type = 2;
+
+  // buf:lint:ignore FIELD_LOWER_SNAKE_CASE
+  // See [specification/2025-06-18/basic/index#general-fields] for notes on _meta usage.
+  google.protobuf.Struct _meta = 3;
+
+  // A base64-encoded string representing the binary data of the item.
+  string blob = 4;
+}
+
+// The server's response to a tool call.
+message CallToolResult {
+  // A list of content objects representing the unstructured result.
+  repeated google.protobuf.Struct content = 1;
+
+  // An optional structured result of the tool call.
+  google.protobuf.Struct structured_content = 2;
+
+  // Whether the tool call ended in an error.
+  bool is_error = 3;
+}
+
+// The server's response to a completion/complete request.
+message CompleteResult {
+  // An array of completion values. Must not exceed 100 items.
+  repeated string values = 1;
+
+  // The total number of completion options available.
+  int32 total = 2;
+
+  // Indicates whether there are additional completion options beyond those provided.
+  bool has_more = 3;
+}
+
+// The server's response to a prompts/get request from the client.
+message GetPromptResult {
+  // An optional description for the prompt.
+  string description = 1;
+
+  // Describes a message returned as part of a prompt.
+  message PromptMessage {
+    // The sender or recipient of the message.
+    Role role = 1;
+
+    // The content block of the message.
+    google.protobuf.Struct content = 2;
+  }
+
+  // The sequence of messages composing the prompt.
+  repeated PromptMessage messages = 2;
+}
+
+// After receiving an initialize request, the server sends this response.
+message InitializeResult {
+  // The version of the Model Context Protocol that the server wants to use.
+  string protocol_version = 1;
+
+  // Capabilities that a server may support.
+  ServerCapabilities capabilities = 2;
+
+  // Describes the name and version of the server implementation.
+  Implementation server_info = 3;
+
+  // Instructions describing how to use the server and its features.
+  string instructions = 4;
+}
+
+// The server's response to a prompts/list request from the client.
+message ListPromptsResult {
+  // An opaque token representing the pagination position after the last returned result.
+  PaginatedResult next_cursor = 1;
+
+  // A prompt or prompt template that the server offers.
+  message Prompt {
+    // Base metadata with name and title properties.
+    BaseMetadata base = 1;
+
+    // An optional description of what this prompt provides.
+    string description = 2;
+
+    // Describes an argument that a prompt can accept.
+    message Argument {
+      // Base metadata with name and title properties.
+      BaseMetadata base = 1;
+
+      // A human-readable description of the argument.
+      string description = 2;
+
+      // Whether this argument must be provided.
+      bool required = 3;
+    }
+
+    // A list of arguments to use for templating the prompt.
+    repeated Argument arguments = 3;
+
+    // buf:lint:ignore FIELD_LOWER_SNAKE_CASE
+    // See [specification/2025-06-18/basic/index#general-fields] for notes on _meta usage.
+    google.protobuf.Struct _meta = 4;
+  }
+
+  // The list of available prompts.
+  repeated Prompt prompts = 2;
+}
+
+// The server's response to a resources/list request from the client.
+message ListResourcesResult {
+  // An opaque token representing the pagination position after the last returned result.
+  PaginatedResult next_cursor = 1;
+
+  // The list of resources.
+  repeated Resource resources = 2;
+}
+
+// The server's response to a resources/templates/list request from the client.
+message ListResourceTemplatesResult {
+  // An opaque token representing the pagination position after the last returned result.
+  PaginatedResult next_cursor = 1;
+
+  // The list of resource templates.
+  repeated ResourceTemplate resource_templates = 2;
+}
+
+// The server's response to a tools/list request from the client.
+message ListToolsResult {
+  // Pagination result.
+  PaginatedResult next_cursor = 1;
+
+  // Definition for a tool the client can call.
+  message Tool {
+    // Base metadata with name and title properties.
+    BaseMetadata base = 1;
+
+    // A human-readable description of the tool.
+    string description = 2;
+
+    // JSON Schema defining expected parameters.
+    google.protobuf.Struct input_schema = 3;
+
+    // JSON Schema defining the tool's structured output.
+    google.protobuf.Struct output_schema = 4;
+
+    // Additional properties describing a Tool to clients.
+    message Annotations {
+      // A human-readable title for the tool.
+      string title = 1;
+
+      // Whether the tool performs only additive updates.
+      bool destructive_hint = 2;
+
+      // Whether calling the tool repeatedly with the same arguments has no extra effect.
+      bool idempotent_hint = 3;
+
+      // Whether this tool may interact with an open world of external entities.
+      bool open_world_hint = 4;
+
+      // If true, the tool does not modify its environment.
+      bool read_only_hint = 5;
+    }
+
+    // Optional additional tool information.
+    Annotations annotations = 5;
+
+    // buf:lint:ignore FIELD_LOWER_SNAKE_CASE
+    // See [specification/2025-06-18/basic/index#general-fields] for notes on _meta usage.
+    google.protobuf.Struct _meta = 6;
+  }
+
+  // The list of available tools.
+  repeated Tool tools = 2;
+}
+
+// The server's response to a resources/read request from the client.
+message ReadResourceResult {
+  // The contents of the resource.
+  repeated ResourceContentsUnion contents = 1;
+}
+
+// A known resource that the server is capable of reading.
+message Resource {
+  // Base metadata with name and title properties.
+  BaseMetadata base = 1;
+
+  // The URI of this resource.
+  string uri = 2;
+
+  // A description of what this resource represents.
+  string description = 3;
+
+  // The MIME type of this resource, if known.
+  string mime_type = 4;
+
+  // Optional annotations for the client.
+  google.protobuf.Struct annotations = 5;
+
+  // The size of the raw resource content, in bytes.
+  int64 size = 6;
+
+  // buf:lint:ignore FIELD_LOWER_SNAKE_CASE
+  // See [specification/2025-06-18/basic/index#general-fields] for notes on _meta usage.
+  google.protobuf.Struct _meta = 7;
+}
+
+// A union of possible ResourceContents types.
+message ResourceContentsUnion {
+  oneof contents {
+    // The text variant of resource contents.
+    TextResourceContents text = 1;
+
+    // The binary variant of resource contents.
+    BlobResourceContents blob = 2;
+  }
+}
+
+// A template description for resources available on the server.
+message ResourceTemplate {
+  // Base metadata with name and title properties.
+  BaseMetadata base = 1;
+
+  // A URI template (RFC 6570) that can be used to construct resource URIs.
+  string uri_template = 2;
+
+  // A description of what this template is for.
+  string description = 3;
+
+  // The MIME type for all resources that match this template.
+  string mime_type = 4;
+
+  // Optional annotations for the client.
+  google.protobuf.Struct annotations = 5;
+
+  // buf:lint:ignore FIELD_LOWER_SNAKE_CASE
+  // See [specification/2025-06-18/basic/index#general-fields] for notes on _meta usage.
+  google.protobuf.Struct _meta = 6;
+}
+
+// The contents of a specific resource or sub‐resource in text form.
+message TextResourceContents {
+  // The URI of this resource.
+  string uri = 1;
+
+  // The MIME type of this resource, if known.
+  string mime_type = 2;
+
+  // buf:lint:ignore FIELD_LOWER_SNAKE_CASE
+  // See [specification/2025-06-18/basic/index#general-fields] for notes on _meta usage.
+  google.protobuf.Struct _meta = 3;
+
+  // The text of the item. This must only be set if the item can actually be represented as text (not binary data).
+  string text = 4;
+}

@@ -1,0 +1,29 @@
+edition = "2023";
+
+package mcp.client.v1;
+
+import "google/protobuf/struct.proto";
+
+option optimize_for = CODE_SIZE;
+
+// Capabilities a client may support. Known capabilities are defined here, in this schema,
+// but this is not a closed set: any client can define its own, additional capabilities.
+message ClientCapabilities {
+  // Experimental, non-standard capabilities that the client supports.
+  map<string, google.protobuf.Struct> experimental = 1;
+
+  // Present if the client supports elicitation from the server.
+  google.protobuf.Struct elicitation = 2;
+
+  // Present if the client supports listing roots.
+  message Roots {
+    // Whether the client supports notifications for changes to the roots list.
+    bool list_changed = 1;
+  }
+
+  // Present if the client supports listing roots.
+  Roots roots = 3;
+
+  // Present if the client supports sampling from an LLM.
+  google.protobuf.Struct sampling = 4;
+}

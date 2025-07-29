@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=https://json.schemastore.org/buf.gen.json
+---
+version: v2
+
+clean: true
+
+managed:
+  enabled: true
+  override:
+    - file_option: go_package
+      value: pkg/mcp/api
+      path: mcp/api/v1
+
+    - file_option: go_package
+      value: pkg/mcp/client
+      path: mcp/client/v1
+
+    - file_option: go_package
+      value: pkg/mcp/server
+      path: mcp/server/v1
+
+    - file_option: java_package
+      value: org.mcp.api.model
+      path: mcp/api/v1
+
+    - file_option: java_package
+      value: org.mcp.api.resources
+      path: mcp/api/v1
+
+    - file_option: java_package
+      value: org.mcp.client.model
+      path: mcp/client/v1
+
+    - file_option: java_package
+      value: org.mcp.client.resources
+      path: mcp/client/v1
+
+    - file_option: java_package
+      value: org.mcp.server.model
+      path: mcp/server/v1
+
+    - file_option: java_package
+      value: org.mcp.server.resources
+      path: mcp/server/v1
+
+plugins:
+  # Go
+  - local: protoc-gen-go
+    out: gen/go/pkg/mcp
+    opt: module=pkg/mcp
+
+  # Python
+  - protoc_builtin: python
+    out: gen/python
+
+  - protoc_builtin: pyi
+    out: gen/python
+
+  # Java
+  - protoc_builtin: java
+    out: gen/java/src/main/java
+
+inputs:
+  - directory: proto

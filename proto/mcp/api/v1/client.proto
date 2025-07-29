@@ -1,0 +1,57 @@
+edition = "2023";
+
+package mcp.api.v1;
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "mcp/client/v1/notifications.proto";
+import "mcp/client/v1/results.proto";
+import "mcp/server/v1/requests.proto";
+
+option optimize_for = CODE_SIZE;
+
+// Service describing notifications sent by the client.
+service ClientNotificationService {
+  // Notify that a previously-issued request is being cancelled.
+  rpc Cancelled(mcp.client.v1.CancelledNotification) returns (google.protobuf.Empty) {
+    option (google.api.http) = {get: "/v1/notifications/cancelled"};
+  }
+
+  // Notify the server that initialization has finished.
+  rpc Initialized(mcp.client.v1.InitializedNotification) returns (google.protobuf.Empty) {
+    option (google.api.http) = {get: "/v1/notifications/initialized"};
+  }
+
+  // Send a progress notification.
+  rpc Progress(mcp.client.v1.ProgressNotification) returns (google.protobuf.Empty) {
+    option (google.api.http) = {get: "/v1/notifications/progress"};
+  }
+
+  // Notify that the list of roots has changed.
+  rpc RootsListChanged(mcp.client.v1.RootsListChangedNotification) returns (google.protobuf.Empty) {
+    option (google.api.http) = {get: "/v1/notifications/roots/list_changed"};
+  }
+}
+
+// Service describing available methods exposed by an MCP client.
+service ClientService {
+  // Elicit additional information from the user.
+  rpc CreateElicitation(mcp.server.v1.ElicitRequest) returns (mcp.client.v1.ElicitResult) {
+    option (google.api.http) = {get: "/v1/elicitation/create"};
+  }
+
+  // Instruct the client to sample an LLM and return its message.
+  rpc CreateMessage(mcp.server.v1.CreateMessageRequest) returns (mcp.client.v1.CreateMessageResult) {
+    option (google.api.http) = {get: "/v1/sampling/createMessage"};
+  }
+
+  // Request the client to list roots.
+  rpc ListRoots(mcp.server.v1.ListRootsRequest) returns (mcp.client.v1.ListRootsResult) {
+    option (google.api.http) = {get: "/v1/roots/list"};
+  }
+
+  // Ping the other party to check if it is still alive.
+  rpc Ping(mcp.server.v1.PingRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {get: "/v1/ping"};
+  }
+}

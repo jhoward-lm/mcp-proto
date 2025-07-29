@@ -1,0 +1,138 @@
+edition = "2023";
+
+package mcp.server.v1;
+
+import "google/protobuf/struct.proto";
+import "mcp/server/v1/common.proto";
+import "mcp/server/v1/results.proto";
+
+option optimize_for = CODE_SIZE;
+
+// Optional annotations for the client. The client can use annotations to inform how objects are used or displayed.
+message Annotations {
+  // Describes who the intended customer of this object or data is.
+  repeated Role audience = 1;
+
+  // Describes how important this data is for operating the server.
+  double priority = 2;
+
+  // The moment the resource was last modified, as an ISO 8601 formatted string.
+  string last_modified = 3;
+}
+
+// Audio provided to or from an LLM.
+message AudioContent {
+  // The discriminator field, always "audio".
+  string type = 1;
+
+  // The base64-encoded audio data.
+  string data = 2;
+
+  // The MIME type of the audio.
+  string mime_type = 3;
+
+  // Optional annotations for the client.
+  Annotations annotations = 4;
+
+  // buf:lint:ignore FIELD_LOWER_SNAKE_CASE
+  // See [specification/2025-06-18/basic/index#general-fields] for notes on _meta usage.
+  google.protobuf.Struct _meta = 5;
+}
+
+// A block of content: text, image, audio, or embedded/link to a resource.
+message ContentBlock {
+  oneof block {
+    // Text content.
+    TextContent text = 1;
+
+    // Image content.
+    ImageContent image = 2;
+
+    // Audio content.
+    AudioContent audio = 3;
+
+    // Link to an external resource.
+    ResourceLink resource_link = 4;
+
+    // Embedded inline resource.
+    EmbeddedResource resource = 5;
+  }
+}
+
+// The contents of a resource, embedded into a prompt or tool call result.
+message EmbeddedResource {
+  // The discriminator field, always "resource".
+  string type = 1;
+
+  // The embedded resource contents.
+  ResourceContentsUnion resource = 2;
+
+  // Optional annotations for the client.
+  google.protobuf.Struct annotations = 3;
+
+  // buf:lint:ignore FIELD_LOWER_SNAKE_CASE
+  // See [specification/2025-06-18/basic/index#general-fields] for notes on _meta usage.
+  google.protobuf.Struct _meta = 4;
+}
+
+// An image provided to or from an LLM.
+message ImageContent {
+  // The discriminator field, always "image".
+  string type = 1;
+
+  // The base64-encoded image data.
+  string data = 2;
+
+  // The MIME type of the image.
+  string mime_type = 3;
+
+  // Optional annotations for the client.
+  Annotations annotations = 4;
+
+  // buf:lint:ignore FIELD_LOWER_SNAKE_CASE
+  // See [specification/2025-06-18/basic/index#general-fields] for notes on _meta usage.
+  google.protobuf.Struct _meta = 5;
+}
+
+// Identifies a prompt.
+message PromptReference {
+  // The discriminator field, always "ref/prompt".
+  string type = 1;
+
+  // Base metadata with name and title properties.
+  BaseMetadata base = 2;
+}
+
+// A resource that the server is capable of reading, included in a prompt or tool call result.
+message ResourceLink {
+  // The discriminator field, always "resource_link".
+  string type = 1;
+
+  // The linked resource metadata and URI.
+  Resource resource = 2;
+}
+
+// A reference to a resource or resource template definition.
+message ResourceTemplateReference {
+  // The discriminator field, always "ref/resource".
+  string type = 1;
+
+  // The URI or URI template of the resource.
+  string uri = 2;
+}
+
+// Text provided to or from an LLM.
+message TextContent {
+  // The discriminator field, always "text".
+  string type = 1;
+
+  // The text content of the message.
+  string text = 2;
+
+  // Optional annotations for the client.
+  Annotations annotations = 3;
+
+  // buf:lint:ignore FIELD_LOWER_SNAKE_CASE
+  // See [specification/2025-06-18/basic/index#general-fields] for notes on _meta usage.
+  google.protobuf.Struct _meta = 4;
+}

@@ -1,0 +1,77 @@
+edition = "2023";
+
+package mcp.client.v1;
+
+import "google/protobuf/struct.proto";
+import "mcp/client/v1/common.proto";
+
+option optimize_for = CODE_SIZE;
+
+// The client's response to a sampling/createMessage request.
+message CreateMessageResult {
+  // buf:lint:ignore FIELD_LOWER_SNAKE_CASE
+  // The request metadata (see Result).
+  google.protobuf.Struct _meta = 1;
+
+  // The generated message's role.
+  Role role = 2;
+
+  // The generated message content.
+  google.protobuf.Struct content = 3;
+
+  // The name of the model that generated the message.
+  string model = 4;
+
+  // The reason why sampling stopped, if known.
+  string stop_reason = 5;
+}
+
+// The client's response to an elicitation request.
+message ElicitResult {
+  // buf:lint:ignore FIELD_LOWER_SNAKE_CASE
+  // The request metadata (see Result), if any.
+  google.protobuf.Struct _meta = 1;
+
+  // The user action in response to an elicitation.
+  enum ElicitAction {
+    // Unspecified action.
+    ELICIT_ACTION_UNSPECIFIED = 0;
+
+    // User submitted the form/confirmed the action.
+    ELICIT_ACTION_ACCEPT = 1;
+
+    // User explicitly declined the action.
+    ELICIT_ACTION_DECLINE = 2;
+
+    // User dismissed without an explicit choice.
+    ELICIT_ACTION_CANCEL = 3;
+  }
+
+  // The user action in response to the elicitation.
+  ElicitAction action = 2;
+
+  // The submitted form data, only present when action is ACCEPT.
+  google.protobuf.Struct content = 3;
+}
+
+// A response that indicates success but carries no data.
+message EmptyResult {}
+
+// The client's response to a roots/list request from the server.
+message ListRootsResult {
+  // Represents a root directory or file that the server can operate on.
+  message Root {
+    // The URI identifying the root. Must start with file:// for now.
+    string uri = 1;
+
+    // An optional human-readable name for the root.
+    string name = 2;
+
+    // buf:lint:ignore FIELD_LOWER_SNAKE_CASE
+    // See [specification/2025-06-18/basic/index#general-fields] for notes on _meta usage.
+    google.protobuf.Struct _meta = 3;
+  }
+
+  // The array of root directories or files.
+  repeated Root roots = 1;
+}

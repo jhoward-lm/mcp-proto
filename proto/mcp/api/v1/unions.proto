@@ -1,0 +1,169 @@
+edition = "2023";
+
+package mcp.api.v1;
+
+import "mcp/client/v1/notifications.proto";
+import "mcp/client/v1/requests.proto";
+import "mcp/client/v1/results.proto";
+import "mcp/server/v1/common.proto";
+import "mcp/server/v1/notifications.proto";
+import "mcp/server/v1/requests.proto";
+import "mcp/server/v1/results.proto";
+
+option optimize_for = CODE_SIZE;
+
+// Union of all notifications the client may receive.
+message ClientNotification {
+  oneof msg {
+    // Cancellation notification.
+    mcp.client.v1.CancelledNotification cancelled = 1;
+
+    // Progress notification.
+    mcp.client.v1.ProgressNotification progress = 2;
+
+    // Initialization finished notification.
+    mcp.client.v1.InitializedNotification initialized = 3;
+
+    // Roots list changed notification.
+    mcp.client.v1.RootsListChangedNotification roots_list_changed = 4;
+  }
+}
+
+// Union of all requests the client may send.
+message ClientRequest {
+  oneof msg {
+    // Call a tool.
+    mcp.client.v1.CallToolRequest call_tool = 1;
+
+    // Complete an argument (autocomplete).
+    mcp.client.v1.CompleteRequest complete = 2;
+
+    // Get a prompt.
+    mcp.client.v1.GetPromptRequest get_prompt = 3;
+
+    // Initialize handshake.
+    mcp.client.v1.InitializeRequest initialize = 4;
+
+    // List prompts.
+    mcp.client.v1.ListPromptsRequest list_prompts = 5;
+
+    // List resource templates.
+    mcp.client.v1.ListResourceTemplatesRequest list_resource_templates = 6;
+
+    // List resources.
+    mcp.client.v1.ListResourcesRequest list_resources = 7;
+
+    // List tools.
+    mcp.client.v1.ListToolsRequest list_tools = 8;
+
+    // Ping for liveness.
+    mcp.client.v1.PingRequest ping = 9;
+
+    // Read a resource.
+    mcp.client.v1.ReadResourceRequest read_resource = 10;
+
+    // Set logging level.
+    mcp.client.v1.SetLevelRequest set_level = 11;
+
+    // Subscribe to resource updates.
+    mcp.client.v1.SubscribeRequest subscribe = 12;
+
+    // Unsubscribe from resource updates.
+    mcp.client.v1.UnsubscribeRequest unsubscribe = 13;
+  }
+}
+
+// Union of all response/result types the client may receive.
+message ClientResult {
+  oneof msg {
+    // Empty result.
+    mcp.client.v1.EmptyResult empty = 1;
+
+    // Create message result (sampling).
+    mcp.client.v1.CreateMessageResult create_message = 2;
+
+    // Elicit result.
+    mcp.client.v1.ElicitResult elicit = 3;
+
+    // List roots result.
+    mcp.client.v1.ListRootsResult list_roots = 4;
+  }
+}
+
+// Union of all notifications the server may receive.
+message ServerNotification {
+  oneof msg {
+    // Cancellation notification.
+    mcp.server.v1.CancelledNotification cancelled = 1;
+
+    // Progress notification.
+    mcp.server.v1.ProgressNotification progress = 2;
+
+    // Logging message notification.
+    mcp.server.v1.LoggingMessageNotification logging_message = 3;
+
+    // Prompt list changed notification.
+    mcp.server.v1.PromptListChangedNotification prompt_list_changed = 4;
+
+    // Resource list changed notification.
+    mcp.server.v1.ResourceListChangedNotification resource_list_changed = 5;
+
+    // Resource updated notification.
+    mcp.server.v1.ResourceUpdatedNotification resource_updated = 6;
+
+    // Tool list changed notification.
+    mcp.server.v1.ToolListChangedNotification tool_list_changed = 7;
+  }
+}
+
+// Union of all requests the server may send.
+message ServerRequest {
+  oneof msg {
+    // Create a sampling message.
+    mcp.server.v1.CreateMessageRequest create_message = 1;
+
+    // Elicit additional information.
+    mcp.server.v1.ElicitRequest elicit = 2;
+
+    // List roots request.
+    mcp.server.v1.ListRootsRequest list_roots = 3;
+
+    // Ping for liveness.
+    mcp.server.v1.PingRequest ping = 4;
+  }
+}
+
+// Union of all response/result types the server may receive.
+message ServerResult {
+  oneof msg {
+    // Empty result.
+    mcp.server.v1.EmptyResult empty = 1;
+
+    // Call tool result.
+    mcp.server.v1.CallToolResult call_tool = 2;
+
+    // Complete result (autocomplete).
+    mcp.server.v1.CompleteResult complete = 3;
+
+    // Get prompt result.
+    mcp.server.v1.GetPromptResult get_prompt = 4;
+
+    // Initialize result.
+    mcp.server.v1.InitializeResult initialize = 5;
+
+    // List prompts result.
+    mcp.server.v1.ListPromptsResult list_prompts = 6;
+
+    // List resource templates result.
+    mcp.server.v1.ListResourceTemplatesResult list_resource_templates = 7;
+
+    // List resources result.
+    mcp.server.v1.ListResourcesResult list_resources = 8;
+
+    // List tools result.
+    mcp.server.v1.ListToolsResult list_tools = 9;
+
+    // Read resource result.
+    mcp.server.v1.ReadResourceResult read_resource = 10;
+  }
+}

@@ -1,0 +1,138 @@
+edition = "2023";
+
+package mcp.server.v1;
+
+import "google/protobuf/descriptor.proto";
+import "google/protobuf/struct.proto";
+
+option optimize_for = CODE_SIZE;
+
+extend google.protobuf.EnumValueOptions {
+  // buf:lint:ignore COMMENT_FIELD
+  string string_name = 248163264;
+}
+
+// The severity of a log message.
+enum LoggingLevel {
+  // Unspecified severity.
+  LOGGING_LEVEL_UNSPECIFIED = 0;
+
+  // A panic condition.
+  LOGGING_LEVEL_ALERT = 1 [(string_name) = "alert"];
+
+  // A critical condition.
+  LOGGING_LEVEL_CRITICAL = 2 [(string_name) = "critical"];
+
+  // A debug message.
+  LOGGING_LEVEL_DEBUG = 3 [(string_name) = "debug"];
+
+  // Normal but significant condition.
+  LOGGING_LEVEL_NOTICE = 4 [(string_name) = "notice"];
+
+  // A procedural entry.
+  LOGGING_LEVEL_INFO = 5 [(string_name) = "info"];
+
+  // A warning condition.
+  LOGGING_LEVEL_WARNING = 6 [(string_name) = "warning"];
+
+  // A non-critical error.
+  LOGGING_LEVEL_ERROR = 7 [(string_name) = "error"];
+
+  // A severe error.
+  LOGGING_LEVEL_EMERGENCY = 8 [(string_name) = "emergency"];
+}
+
+// The sender or recipient of messages and data in a conversation.
+enum Role {
+  // Unspecified role.
+  ROLE_UNSPECIFIED = 0;
+
+  // A user-originated message.
+  ROLE_USER = 1 [(string_name) = "user"];
+
+  // An assistant-originated message.
+  ROLE_ASSISTANT = 2 [(string_name) = "assistant"];
+}
+
+// Base metadata with name and title properties.
+message BaseMetadata {
+  // Intended for programmatic or logical use.
+  string name = 1;
+
+  // Intended for UI and end-user contexts.
+  string title = 2;
+}
+
+// An opaque token used to represent a cursor for pagination.
+message Cursor {
+  // Cursor value used for pagination.
+  string value = 1;
+}
+
+// A response that indicates success but carries no data.
+message EmptyResult {}
+
+// Details of an error in a JSON-RPC error response.
+message ErrorDetails {
+  // The error type that occurred.
+  int32 code = 1;
+
+  // A short description of the error.
+  string message = 2;
+
+  // Additional information about the error.
+  google.protobuf.Value data = 3;
+}
+
+// Describes the name and version of an MCP implementation, with an optional title.
+message Implementation {
+  // Base metadata fields.
+  BaseMetadata base = 1;
+
+  // Version string of the implementation.
+  string version = 2;
+}
+
+// Parameters for any request supporting pagination.
+message PaginatedRequestParams {
+  // An opaque token representing the current pagination position.
+  Cursor cursor = 1;
+}
+
+// Result for any response supporting pagination.
+message PaginatedResult {
+  // An opaque token representing the pagination position after the last returned result.
+  Cursor next_cursor = 1;
+}
+
+// A progress token, used to associate progress notifications with the original request.
+message ProgressToken {
+  oneof token {
+    // Numeric progress token.
+    int64 number = 1;
+
+    // String progress token.
+    string string = 2;
+  }
+}
+
+// A uniquely identifying ID for a request in JSON-RPC.
+message RequestId {
+  oneof value {
+    // String representation of the request ID.
+    string string_id = 1;
+
+    // Numeric representation of the request ID.
+    int64 int_id = 2;
+  }
+}
+
+// A successful (non-error) response payload for JSON-RPC.
+message Result {
+  // buf:lint:ignore FIELD_LOWER_SNAKE_CASE
+  // See [specification/2025-06-18/basic/index#general-fields] for notes on _meta usage.
+  google.protobuf.Struct _meta = 1;
+
+  // The result value.
+  google.protobuf.Struct data = 2;
+}

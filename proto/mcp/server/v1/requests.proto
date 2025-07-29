@@ -1,0 +1,284 @@
+edition = "2023";
+
+package mcp.server.v1;
+
+import "google/protobuf/struct.proto";
+import "mcp/server/v1/common.proto";
+import "mcp/server/v1/content.proto";
+
+option optimize_for = CODE_SIZE;
+
+// A primitive schema definition for a boolean.
+message BooleanSchema {
+  // The JSON Schema type, always "boolean".
+  string type = 1;
+
+  // A human-readable title for the schema.
+  string title = 2;
+
+  // A description of the schema.
+  string description = 3;
+
+  // The default value for the boolean.
+  bool default = 4;
+}
+
+// A request from the client to ask for completion options.
+message CompleteRequest {
+  // The method name.
+  string method = 1 [default = "completion/complete"];
+  // string method = 1 [(buf.validate.field).string.const = "completion/complete"];
+
+  // Parameters for CompleteRequest.
+  message Params {
+    // The argument provided for completion matching.
+    message Argument {
+      // The name of the argument.
+      string name = 1;
+
+      // The value of the argument.
+      string value = 2;
+    }
+
+    // The argument's information.
+    Argument argument = 1;
+
+    // Additional context for completions.
+    message Context {
+      // Previously-resolved variables in a URI template or prompt.
+      map<string, string> arguments = 1;
+    }
+
+    // Additional, optional context for completions.
+    Context context = 2;
+
+    // A reference to a resource or prompt.
+    oneof ref {
+      // Prompt reference.
+      PromptReference prompt_ref = 3;
+
+      // Resource-template reference.
+      ResourceTemplateReference resource_ref = 4;
+    }
+  }
+
+  // The request parameters.
+  Params params = 2;
+}
+
+// Request from the server to sample an LLM via the client.
+message CreateMessageRequest {
+  // The method name.
+  string method = 1 [default = "sampling/createMessage"];
+
+  // Parameters for CreateMessageRequest.
+  message Params {
+    // Describes a message issued to or received from an LLM API.
+    message Message {
+      // The sender or recipient of the message.
+      Role role = 1;
+
+      // The content block of the message.
+      google.protobuf.Struct content = 2;
+    }
+
+    // Messages to send to the LLM.
+    repeated Message messages = 1;
+
+    // The server’s preferences for model selection, requested of the client during sampling.
+    message ModelPreferences {
+      // How much to prioritize cost when selecting a model.
+      // A value of 0 means cost is not important, while 1 means cost is the most important factor.
+      double cost_priority = 1;
+
+      // Hints to use for model selection.
+      message ModelHint {
+        // A hint for a model name.
+        string name = 1;
+      }
+
+      // Optional hints to use for model selection.
+      // If multiple hints are specified, the client must evaluate them in order.
+      repeated ModelHint hints = 2;
+
+      // How much to prioritize intelligence and capabilities when selecting a model.
+      // A value of 0 means intelligence is not important, while 1 means it is the most important factor.
+      double intelligence_priority = 3;
+
+      // How much to prioritize sampling speed (latency) when selecting a model.
+      // A value of 0 means speed is not important, while 1 means it is the most important factor.
+      double speed_priority = 4;
+    }
+
+    // The server's preferences for which model to select.
+    ModelPreferences model_preferences = 2;
+
+    // An optional system prompt the server wants to use.
+    string system_prompt = 3;
+
+    // Which context set to include with the sampling request.
+    enum IncludeContext {
+      // Unspecified choice.
+      INCLUDE_CONTEXT_UNSPECIFIED = 0;
+
+      // Attach context from all known servers.
+      INCLUDE_CONTEXT_ALL_SERVERS = 1;
+
+      // Do not include any context.
+      INCLUDE_CONTEXT_NONE = 2;
+
+      // Only include context from this server.
+      INCLUDE_CONTEXT_THIS_SERVER = 3;
+    }
+
+    // A request to include context from one or more MCP servers.
+    IncludeContext include_context = 4;
+
+    // The sampling temperature.
+    double temperature = 5;
+
+    // The maximum number of tokens to sample.
+    int32 max_tokens = 6;
+
+    // Sequences that will halt sampling.
+    repeated string stop_sequences = 7;
+
+    // Metadata to pass through to the LLM provider.
+    google.protobuf.Struct metadata = 8;
+  }
+
+  // The request parameters.
+  Params params = 2;
+}
+
+// A request from the server to elicit additional information from the user via the client.
+message ElicitRequest {
+  // The method name.
+  string method = 1 [default = "elicitation/create"];
+  // string method = 1 [(buf.validate.field).string.const = "elicitation/create"];
+
+  // Parameters for ElicitRequest.
+  message Params {
+    // The message to present to the user.
+    string message = 1;
+
+    // The restricted subset of JSON Schema for elicitation.
+    message RequestedSchema {
+      // The type of the schema, always "object".
+      string type = 1;
+
+      // Properties defined by the schema.
+      map<string, PrimitiveSchemaDefinition> properties = 2;
+
+      // Required properties.
+      repeated string required = 3;
+    }
+
+    // A restricted subset of JSON Schema.
+    RequestedSchema requested_schema = 2;
+  }
+
+  // The request parameters.
+  Params params = 2;
+}
+
+// A primitive schema definition for an enum of strings.
+message EnumSchema {
+  // The JSON Schema type, always "string".
+  string type = 1;
+
+  // A human-readable title for the schema.
+  string title = 2;
+
+  // A description of the schema.
+  string description = 3;
+
+  // The allowed enum values.
+  repeated string enum = 4;
+
+  // Display names for enum values.
+  repeated string enum_names = 5;
+}
+
+// Sent from the server to request a list of root URIs from the client.
+message ListRootsRequest {
+  // The method name.
+  string method = 1 [default = "roots/list"];
+}
+
+// A primitive schema definition for a number or integer.
+message NumberSchema {
+  // The JSON Schema type, "number" or "integer".
+  string type = 1;
+
+  // A human-readable title for the schema.
+  string title = 2;
+
+  // A description of the schema.
+  string description = 3;
+
+  // The minimum allowable value.
+  double minimum = 4;
+
+  // The maximum allowable value.
+  double maximum = 5;
+}
+
+// A ping to check that the other party is still alive.
+message PingRequest {
+  // The method name.
+  string method = 1 [default = "ping"];
+}
+
+// Restricted schema definitions that only allow primitive types without nested objects or arrays.
+message PrimitiveSchemaDefinition {
+  oneof definition {
+    // Boolean schema.
+    BooleanSchema boolean_schema = 1;
+
+    // Enum schema.
+    EnumSchema enum_schema = 2;
+
+    // Number schema.
+    NumberSchema number_schema = 3;
+
+    // String schema.
+    StringSchema string_schema = 4;
+  }
+}
+
+// A request from the client to enable or adjust logging.
+message SetLevelRequest {
+  // The method name.
+  string method = 1 [default = "logging/setLevel"];
+
+  // Parameters for SetLevelRequest.
+  message Params {
+    // The level of logging that the client wants to receive.
+    LoggingLevel level = 1;
+  }
+
+  // The request parameters.
+  Params params = 2;
+}
+
+// A primitive schema definition for a string.
+message StringSchema {
+  // The JSON Schema type, always "string".
+  string type = 1;
+
+  // A human-readable title for the schema.
+  string title = 2;
+
+  // A description of the schema.
+  string description = 3;
+
+  // The minimum length of the string.
+  int32 min_length = 4;
+
+  // The maximum length of the string.
+  int32 max_length = 5;
+
+  // The format of the string (e.g., email, uri, date, date-time).
+  string format = 6;
+}

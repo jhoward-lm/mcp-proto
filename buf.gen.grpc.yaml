@@ -1,0 +1,74 @@
+# yaml-language-server: $schema=https://json.schemastore.org/buf.gen.json
+---
+version: v2
+
+managed:
+  enabled: true
+  override:
+    - file_option: go_package
+      value: pkg/mcp/api
+      path: mcp/api/v1
+
+    - file_option: go_package
+      value: pkg/mcp/client
+      path: mcp/client/v1
+
+    - file_option: go_package
+      value: pkg/mcp/server
+      path: mcp/server/v1
+
+    - file_option: java_package
+      value: org.mcp.api.model
+      path: mcp/api/v1
+
+    - file_option: java_package
+      value: org.mcp.api.resources
+      path: mcp/api/v1
+
+    - file_option: java_package
+      value: org.mcp.client.model
+      path: mcp/client/v1
+
+    - file_option: java_package
+      value: org.mcp.client.resources
+      path: mcp/client/v1
+
+    - file_option: java_package
+      value: org.mcp.server.model
+      path: mcp/server/v1
+
+    - file_option: java_package
+      value: org.mcp.server.resources
+      path: mcp/server/v1
+
+plugins:
+  # Go
+  - local: protoc-gen-go-grpc
+    out: gen/go/pkg/mcp
+    opt: module=pkg/mcp
+
+  # Python
+  # Install with `go install github.com/Djarvur/protoc-gen-python-grpc/cmd/protoc-gen-python-grpc@v0.2.1`
+  - local: protoc-gen-python-grpc
+    out: gen/python
+    types:
+      - mcp.api.v1.ClientService
+      - mcp.api.v1.ClientNotificationService
+      - mcp.api.v1.ServerService
+      - mcp.api.v1.ServerNotificationService
+
+  # Java
+  - local: protoc-gen-grpc-java
+    out: gen/java/src/main/java
+    include_imports: false
+    types:
+      - mcp.api.v1.ClientService
+      - mcp.api.v1.ClientNotificationService
+      - mcp.api.v1.ServerService
+      - mcp.api.v1.ServerNotificationService
+
+inputs:
+  - directory: proto
+    paths:
+      - proto/mcp/api/v1/client.proto
+      - proto/mcp/api/v1/server.proto

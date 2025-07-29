@@ -1,0 +1,248 @@
+edition = "2023";
+
+package mcp.client.v1;
+
+import "google/protobuf/struct.proto";
+import "mcp/client/v1/capabilities.proto";
+import "mcp/client/v1/common.proto";
+
+option optimize_for = CODE_SIZE;
+
+// Used by the client to invoke a tool provided by the server.
+message CallToolRequest {
+  // The method name.
+  string method = 1 [default = "tools/call"];
+
+  // Parameters for CallToolRequest.
+  message Params {
+    // The name of the tool to call.
+    string name = 1;
+
+    // Arguments to pass to the tool.
+    google.protobuf.Struct arguments = 2;
+  }
+
+  // The request parameters.
+  Params params = 2;
+}
+
+// A request from the client to ask for completion options.
+message CompleteRequest {
+  // The method name.
+  string method = 1 [default = "completion/complete"];
+  // string method = 1 [(buf.validate.field).string.const = "completion/complete"];
+
+  // Parameters for CompleteRequest.
+  message Params {
+    // The argument provided for completion matching.
+    message Argument {
+      // The name of the argument.
+      string name = 1;
+
+      // The value of the argument.
+      string value = 2;
+    }
+
+    // The argument's information.
+    Argument argument = 1;
+
+    // Additional context for completions.
+    message Context {
+      // Previously-resolved variables in a URI template or prompt.
+      map<string, string> arguments = 1;
+    }
+
+    // Additional, optional context for completions.
+    Context context = 2;
+
+    // Identifies a prompt.
+    message PromptReference {
+      // The discriminator field, always "ref/prompt".
+      string type = 1;
+
+      // Base metadata with name and title properties.
+      BaseMetadata base = 2;
+    }
+
+    // A reference to a resource or resource template definition.
+    message ResourceTemplateReference {
+      // The discriminator field, always "ref/resource".
+      string type = 1;
+
+      // The URI or URI template of the resource.
+      string uri = 2;
+    }
+
+    // A reference to a resource or prompt.
+    oneof ref {
+      // Prompt reference.
+      PromptReference prompt_ref = 3;
+
+      // Resource-template reference.
+      ResourceTemplateReference resource_ref = 4;
+    }
+  }
+
+  // The request parameters.
+  Params params = 2;
+}
+
+// Used by the client to get a prompt provided by the server.
+message GetPromptRequest {
+  // The method name.
+  string method = 1 [default = "prompts/get"];
+
+  // Parameters for GetPromptRequest.
+  message Params {
+    // The name of the prompt or prompt template.
+    string name = 1;
+
+    // Arguments to use for templating the prompt.
+    map<string, string> arguments = 2;
+  }
+
+  // The request parameters.
+  Params params = 2;
+}
+
+// Sent from the client to the server when it first connects, asking it to begin initialization.
+message InitializeRequest {
+  // The method name.
+  string method = 1 [default = "initialize"];
+  // string method = 1 [(buf.validate.field).string.const = "initialize"];
+
+  // The latest version of the Model Context Protocol that the client supports.
+  string protocol_version = 2;
+
+  // Capabilities a client may support.
+  ClientCapabilities capabilities = 3;
+
+  // Information about the client implementation.
+  Implementation client_info = 4;
+}
+
+// Sent from the client to request a list of prompts the server has.
+message ListPromptsRequest {
+  // The method name.
+  string method = 1 [default = "prompts/list"];
+
+  // Parameters for ListPromptsRequest.
+  message Params {
+    // An opaque token representing the current pagination position.
+    PaginatedRequestParams cursor = 1;
+  }
+
+  // The request parameters.
+  Params params = 2;
+}
+
+// Sent from the client to request a list of resources the server has.
+message ListResourcesRequest {
+  // The method name.
+  string method = 1 [default = "resources/list"];
+
+  // Parameters for ListResourcesRequest.
+  message Params {
+    // An opaque token representing the current pagination position.
+    PaginatedRequestParams cursor = 1;
+  }
+
+  // The request parameters.
+  Params params = 2;
+}
+
+// Sent from the client to request a list of resource templates the server has.
+message ListResourceTemplatesRequest {
+  // The method name.
+  string method = 1 [default = "resources/templates/list"];
+
+  // Parameters for ListResourceTemplatesRequest.
+  message Params {
+    // An opaque token representing the current pagination position.
+    PaginatedRequestParams cursor = 1;
+  }
+
+  // The request parameters.
+  Params params = 2;
+}
+
+// Sent from the client to request a list of tools the server has.
+message ListToolsRequest {
+  // The method name.
+  string method = 1 [default = "tools/list"];
+
+  // Parameters for ListToolsRequest.
+  message Params {
+    // Pagination parameters.
+    PaginatedRequestParams cursor = 1;
+  }
+
+  // The request parameters.
+  Params params = 2;
+}
+
+// A ping to check that the other party is still alive.
+message PingRequest {
+  // The method name.
+  string method = 1 [default = "ping"];
+}
+
+// Sent from the client to the server, to read a specific resource URI.
+message ReadResourceRequest {
+  // The method name.
+  string method = 1 [default = "resources/read"];
+
+  // Parameters for ReadResourceRequest.
+  message Params {
+    // The URI of the resource to read.
+    string uri = 1;
+  }
+
+  // The request parameters.
+  Params params = 2;
+}
+
+// A request from the client to enable or adjust logging.
+message SetLevelRequest {
+  // The method name.
+  string method = 1 [default = "logging/setLevel"];
+
+  // Parameters for SetLevelRequest.
+  message Params {
+    // The level of logging that the client wants to receive.
+    LoggingLevel level = 1;
+  }
+
+  // The request parameters.
+  Params params = 2;
+}
+
+// Sent from the client to request resources/updated notifications for a resource.
+message SubscribeRequest {
+  // The method name.
+  string method = 1 [default = "resources/subscribe"];
+
+  // Parameters for SubscribeRequest.
+  message Params {
+    // The URI of the resource to subscribe to.
+    string uri = 1;
+  }
+
+  // The request parameters.
+  Params params = 2;
+}
+
+// Sent from the client to request cancellation of resources/updated notifications.
+message UnsubscribeRequest {
+  // The method name.
+  string method = 1 [default = "resources/unsubscribe"];
+
+  // Parameters for UnsubscribeRequest.
+  message Params {
+    // The URI of the resource to unsubscribe from.
+    string uri = 1;
+  }
+
+  // The request parameters.
+  Params params = 2;
+}

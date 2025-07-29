@@ -1,0 +1,104 @@
+edition = "2023";
+
+package mcp.server.v1;
+
+import "google/protobuf/struct.proto";
+import "mcp/server/v1/common.proto";
+
+option optimize_for = CODE_SIZE;
+
+// Sent by either side to indicate that it is cancelling a previously-issued request.
+message CancelledNotification {
+  // The method name.
+  string method = 1 [default = "notifications/cancelled"];
+
+  // The parameters of a CancelledNotification.
+  message Params {
+    // The ID of the request to cancel.
+    RequestId request_id = 1;
+
+    // An optional string describing the reason for the cancellation.
+    string reason = 2;
+  }
+
+  // Parameters for the cancellation notification.
+  Params params = 2;
+}
+
+// Notification of a log message passed from server to client.
+message LoggingMessageNotification {
+  // The method name.
+  string method = 1 [default = "notifications/message"];
+
+  // Parameters for LoggingMessageNotification.
+  message Params {
+    // The severity of this log message.
+    LoggingLevel level = 1;
+
+    // An optional name of the logger issuing this message.
+    string logger = 2;
+
+    // The data to be logged (string or object).
+    google.protobuf.Value data = 3;
+  }
+
+  // The notification parameters.
+  Params params = 2;
+}
+
+// An out-of-band notification used to inform the receiver of a progress update for a long-running request.
+message ProgressNotification {
+  // The method name.
+  string method = 1 [default = "notifications/progress"];
+
+  // The parameters of a ProgressNotification.
+  message Params {
+    // The progress token which was given in the initial request, used to associate this notification with the request that is proceeding.
+    ProgressToken progress_token = 1;
+
+    // The progress thus far. This should increase every time progress is made, even if the total is unknown.
+    double progress = 2;
+
+    // Total number of items to process (or total progress required), if known.
+    double total = 3;
+
+    // An optional message describing the current progress.
+    string message = 4;
+  }
+
+  // The progress notification parameters.
+  Params params = 2;
+}
+
+// Notification that the list of prompts has changed.
+message PromptListChangedNotification {
+  // The method name.
+  string method = 1 [default = "notifications/prompts/list_changed"];
+}
+
+// Informing the client that the list of resources has changed.
+message ResourceListChangedNotification {
+  // The method name.
+  string method = 1 [default = "notifications/resources/list_changed"];
+}
+
+// Informing the client that a resource has changed and may need to be read again.
+message ResourceUpdatedNotification {
+  // The method name.
+  string method = 1 [default = "notifications/resources/updated"];
+
+  // Parameters for ResourceUpdatedNotification.
+  message Params {
+    // The URI of the resource that has been updated.
+    string uri = 1;
+  }
+
+  // The notification parameters.
+  Params params = 2;
+}
+
+// Notification that the list of tools has changed.
+message ToolListChangedNotification {
+  // The method name.
+  string method = 1 [default = "notifications/tools/list_changed"];
+}

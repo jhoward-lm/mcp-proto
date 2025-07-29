@@ -1,0 +1,76 @@
+edition = "2023";
+
+package mcp.server.v1;
+
+import "google/protobuf/struct.proto";
+import "mcp/server/v1/common.proto";
+
+option optimize_for = CODE_SIZE;
+
+// A response to a request that indicates an error occurred.
+message JSONRPCError {
+  // The JSON-RPC version.
+  string jsonrpc = 1;
+
+  // A uniquely identifying ID for a request in JSON-RPC.
+  RequestId id = 2;
+
+  // The error details.
+  ErrorDetails error = 3;
+}
+
+// Refers to any valid JSON-RPC object that can be decoded off the wire, or encoded to be sent.
+message JSONRPCMessage {
+  oneof msg {
+    // JSON-RPC request.
+    JSONRPCRequest request = 1;
+
+    // JSON-RPC notification.
+    JSONRPCNotification notification = 2;
+
+    // JSON-RPC response.
+    JSONRPCResponse response = 3;
+
+    // JSON-RPC error.
+    JSONRPCError error = 4;
+  }
+}
+
+// A notification which does not expect a response.
+message JSONRPCNotification {
+  // The JSON-RPC version.
+  string jsonrpc = 1;
+
+  // The method to invoke.
+  string method = 2;
+
+  // The notification parameters.
+  google.protobuf.Struct params = 3;
+}
+
+// A request that expects a response.
+message JSONRPCRequest {
+  // The JSON-RPC version.
+  string jsonrpc = 1;
+
+  // A uniquely identifying ID for a request in JSON-RPC.
+  RequestId id = 2;
+
+  // The method to invoke.
+  string method = 3;
+
+  // The request parameters.
+  google.protobuf.Struct params = 4;
+}
+
+// A successful (non-error) response to a request.
+message JSONRPCResponse {
+  // The JSON-RPC version.
+  string jsonrpc = 1;
+
+  // A uniquely identifying ID for a request in JSON-RPC.
+  RequestId id = 2;
+
+  // The result of the request.
+  Result result = 3;
+}

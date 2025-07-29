@@ -1,0 +1,117 @@
+edition = "2023";
+
+package mcp.api.v1;
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "mcp/client/v1/requests.proto";
+import "mcp/server/v1/notifications.proto";
+import "mcp/server/v1/results.proto";
+
+option optimize_for = CODE_SIZE;
+
+// Service describing notifications sent by the server.
+service ServerNotificationService {
+  // Notify that a previously-issued request is being cancelled.
+  rpc Cancelled(mcp.server.v1.CancelledNotification) returns (google.protobuf.Empty) {
+    option (google.api.http) = {get: "/v1/notifications/cancelled"};
+  }
+
+  // Send a log message to the client.
+  rpc Message(mcp.server.v1.LoggingMessageNotification) returns (google.protobuf.Empty) {
+    option (google.api.http) = {get: "/v1/notifications/message"};
+  }
+
+  // Send a progress notification.
+  rpc Progress(mcp.server.v1.ProgressNotification) returns (google.protobuf.Empty) {
+    option (google.api.http) = {get: "/v1/notifications/progress"};
+  }
+
+  // Notify that the list of prompts has changed.
+  rpc PromptListChanged(mcp.server.v1.PromptListChangedNotification) returns (google.protobuf.Empty) {
+    option (google.api.http) = {get: "/v1/notifications/prompts/list_changed"};
+  }
+
+  // Notify that the list of resources has changed.
+  rpc ResourceListChanged(mcp.server.v1.ResourceListChangedNotification) returns (google.protobuf.Empty) {
+    option (google.api.http) = {get: "/v1/notifications/resources/list_changed"};
+  }
+
+  // Notify that a specific resource has been updated.
+  rpc ResourceUpdated(mcp.server.v1.ResourceUpdatedNotification) returns (google.protobuf.Empty) {
+    option (google.api.http) = {get: "/v1/notifications/resources/updated"};
+  }
+
+  // Notify that the list of tools has changed.
+  rpc ToolListChanged(mcp.server.v1.ToolListChangedNotification) returns (google.protobuf.Empty) {
+    option (google.api.http) = {get: "/v1/notifications/tools/list_changed"};
+  }
+}
+
+// Service describing available methods exposed by an MCP server.
+service ServerService {
+  // Invoke a tool by name.
+  rpc CallTool(mcp.client.v1.CallToolRequest) returns (mcp.server.v1.CallToolResult) {
+    option (google.api.http) = {get: "/v1/tools/call"};
+  }
+
+  // Ask for completion options.
+  rpc Complete(mcp.client.v1.CompleteRequest) returns (mcp.server.v1.CompleteResult) {
+    option (google.api.http) = {get: "/v1/completion/complete"};
+  }
+
+  // Retrieve a single prompt by name.
+  rpc GetPrompt(mcp.client.v1.GetPromptRequest) returns (mcp.server.v1.GetPromptResult) {
+    option (google.api.http) = {get: "/v1/prompts/get"};
+  }
+
+  // Initiate the connection with the server.
+  rpc Initialize(mcp.client.v1.InitializeRequest) returns (mcp.server.v1.InitializeResult) {
+    option (google.api.http) = {get: "/v1/initialize"};
+  }
+
+  // List available prompts.
+  rpc ListPrompts(mcp.client.v1.ListPromptsRequest) returns (mcp.server.v1.ListPromptsResult) {
+    option (google.api.http) = {get: "/v1/prompts/list"};
+  }
+
+  // List available resources.
+  rpc ListResources(mcp.client.v1.ListResourcesRequest) returns (mcp.server.v1.ListResourcesResult) {
+    option (google.api.http) = {get: "/v1/resources/list"};
+  }
+
+  // List available resource templates.
+  rpc ListResourceTemplates(mcp.client.v1.ListResourceTemplatesRequest) returns (mcp.server.v1.ListResourceTemplatesResult) {
+    option (google.api.http) = {get: "/v1/resources/templates/list"};
+  }
+
+  // List available tools.
+  rpc ListTools(mcp.client.v1.ListToolsRequest) returns (mcp.server.v1.ListToolsResult) {
+    option (google.api.http) = {get: "/v1/tools/list"};
+  }
+
+  // Ping the other party to check if it is still alive.
+  rpc Ping(mcp.client.v1.PingRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {get: "/v1/ping"};
+  }
+
+  // Read a specific resource by URI.
+  rpc ReadResource(mcp.client.v1.ReadResourceRequest) returns (mcp.server.v1.ReadResourceResult) {
+    option (google.api.http) = {get: "/v1/resources/read"};
+  }
+
+  // Set the minimum log level for notifications.
+  rpc SetLevel(mcp.client.v1.SetLevelRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {get: "/v1/logging/setLevel"};
+  }
+
+  // Request resources/updated notifications for a resource.
+  rpc Subscribe(mcp.client.v1.SubscribeRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {get: "/v1/resources/subscribe"};
+  }
+
+  // Request cancellation of resources/updated notifications.
+  rpc Unsubscribe(mcp.client.v1.UnsubscribeRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {get: "/v1/resources/unsubscribe"};
+  }
+}

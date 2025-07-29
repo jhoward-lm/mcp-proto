@@ -1,0 +1,50 @@
+edition = "2023";
+
+package mcp.server.v1;
+
+import "google/protobuf/struct.proto";
+
+option optimize_for = CODE_SIZE;
+
+// Capabilities that a server may support. Known capabilities are defined here, in this schema,
+// but this is not a closed set: any server can define its own, additional capabilities.
+message ServerCapabilities {
+  // Present if the server supports argument autocompletion suggestions.
+  google.protobuf.Struct completions = 1;
+
+  // Experimental, non-standard capabilities that the server supports.
+  map<string, google.protobuf.Struct> experimental = 2;
+
+  // Present if the server supports sending log messages to the client.
+  google.protobuf.Struct logging = 3;
+
+  // Present if the server offers any prompt templates.
+  message Prompts {
+    // Whether this server supports notifications for changes to the prompt list.
+    bool list_changed = 1;
+  }
+
+  // Present if the server offers any prompt templates.
+  Prompts prompts = 4;
+
+  // Present if the server offers any resources to read.
+  message Resources {
+    // Whether this server supports notifications for changes to the resource list.
+    bool list_changed = 1;
+
+    // Whether this server supports subscribing to resource updates.
+    bool subscribe = 2;
+  }
+
+  // Present if the server offers any resources to read.
+  Resources resources = 5;
+
+  // Present if the server offers any tools to call.
+  message Tools {
+    // Whether this server supports notifications for changes to the tool list.
+    bool list_changed = 1;
+  }
+
+  // Present if the server offers any tools to call.
+  Tools tools = 6;
+}
