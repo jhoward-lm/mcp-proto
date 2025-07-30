@@ -24,23 +24,11 @@ managed:
       path: mcp/api/v1
 
     - file_option: java_package
-      value: org.mcp.api.resources
-      path: mcp/api/v1
-
-    - file_option: java_package
       value: org.mcp.client.model
       path: mcp/client/v1
 
     - file_option: java_package
-      value: org.mcp.client.resources
-      path: mcp/client/v1
-
-    - file_option: java_package
       value: org.mcp.server.model
-      path: mcp/server/v1
-
-    - file_option: java_package
-      value: org.mcp.server.resources
       path: mcp/server/v1
 
 plugins:
@@ -62,3 +50,7 @@ plugins:
 
 inputs:
   - directory: proto
+    paths:
+      - proto/mcp/api/v1/unions.proto
+      - proto/mcp/client/v1
+      - proto/mcp/server/v1

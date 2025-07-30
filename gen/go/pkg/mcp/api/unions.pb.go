@@ -1114,8 +1114,8 @@ const file_mcp_api_v1_unions_proto_rawDesc = "" +
 	"list_tools\x18\t \x01(\v2\x1e.mcp.server.v1.ListToolsResultH\x00R\tlistTools\x12H\n" +
 	"\rread_resource\x18\n" +
 	" \x01(\v2!.mcp.server.v1.ReadResourceResultH\x00R\freadResourceB\x05\n" +
-	"\x03msgB}\n" +
-	"\x15org.mcp.api.resourcesB\vUnionsProtoH\x01P\x01Z\vpkg/mcp/api\xa2\x02\x03MAX\xaa\x02\n" +
+	"\x03msgBy\n" +
+	"\x11org.mcp.api.modelB\vUnionsProtoH\x01P\x01Z\vpkg/mcp/api\xa2\x02\x03MAX\xaa\x02\n" +
 	"Mcp.Api.V1\xca\x02\n" +
 	"Mcp\\Api\\V1\xe2\x02\x16Mcp\\Api\\V1\\GPBMetadata\xea\x02\fMcp::Api::V1b\beditionsp\xe8\a"
 

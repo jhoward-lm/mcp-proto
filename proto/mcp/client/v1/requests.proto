@@ -30,7 +30,6 @@ message CallToolRequest {
 message CompleteRequest {
   // The method name.
   string method = 1 [default = "completion/complete"];
-  // string method = 1 [(buf.validate.field).string.const = "completion/complete"];
 
   // Parameters for CompleteRequest.
   message Params {
@@ -109,7 +108,6 @@ message GetPromptRequest {
 message InitializeRequest {
   // The method name.
   string method = 1 [default = "initialize"];
-  // string method = 1 [(buf.validate.field).string.const = "initialize"];
 
   // The latest version of the Model Context Protocol that the client supports.
   string protocol_version = 2;

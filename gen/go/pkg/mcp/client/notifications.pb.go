@@ -394,8 +394,8 @@ const file_mcp_client_v1_notifications_proto_rawDesc = "" +
 	"\x05total\x18\x03 \x01(\x01R\x05total\x12\x18\n" +
 	"\amessage\x18\x04 \x01(\tR\amessage\"X\n" +
 	"\x1cRootsListChangedNotification\x128\n" +
-	"\x06method\x18\x01 \x01(\t: notifications/roots/list_changedR\x06methodB\x96\x01\n" +
-	"\x18org.mcp.client.resourcesB\x12NotificationsProtoH\x01P\x01Z\x0epkg/mcp/client\xa2\x02\x03MCX\xaa\x02\rMcp.Client.V1\xca\x02\rMcp\\Client\\V1\xe2\x02\x19Mcp\\Client\\V1\\GPBMetadata\xea\x02\x0fMcp::Client::V1b\beditionsp\xe8\a"
+	"\x06method\x18\x01 \x01(\t: notifications/roots/list_changedR\x06methodB\x92\x01\n" +
+	"\x14org.mcp.client.modelB\x12NotificationsProtoH\x01P\x01Z\x0epkg/mcp/client\xa2\x02\x03MCX\xaa\x02\rMcp.Client.V1\xca\x02\rMcp\\Client\\V1\xe2\x02\x19Mcp\\Client\\V1\\GPBMetadata\xea\x02\x0fMcp::Client::V1b\beditionsp\xe8\a"
 
 var (
 	file_mcp_client_v1_notifications_proto_rawDescOnce sync.Once

@@ -27,7 +27,6 @@ message BooleanSchema {
 message CompleteRequest {
   // The method name.
   string method = 1 [default = "completion/complete"];
-  // string method = 1 [(buf.validate.field).string.const = "completion/complete"];
 
   // Parameters for CompleteRequest.
   message Params {
@@ -155,7 +154,6 @@ message CreateMessageRequest {
 message ElicitRequest {
   // The method name.
   string method = 1 [default = "elicitation/create"];
-  // string method = 1 [(buf.validate.field).string.const = "elicitation/create"];
 
   // Parameters for ElicitRequest.
   message Params {

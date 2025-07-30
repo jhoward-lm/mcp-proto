@@ -15,29 +15,29 @@ public final class ServerServiceGrpc {
   public static final java.lang.String SERVICE_NAME = "mcp.api.v1.ServerService";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<org.mcp.client.resources.CallToolRequest,
-      org.mcp.server.resources.CallToolResult> getCallToolMethod;
+  private static volatile io.grpc.MethodDescriptor<com.mcp.client.v1.CallToolRequest,
+      com.mcp.server.v1.CallToolResult> getCallToolMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "CallTool",
-      requestType = org.mcp.client.resources.CallToolRequest.class,
-      responseType = org.mcp.server.resources.CallToolResult.class,
+      requestType = com.mcp.client.v1.CallToolRequest.class,
+      responseType = com.mcp.server.v1.CallToolResult.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<org.mcp.client.resources.CallToolRequest,
-      org.mcp.server.resources.CallToolResult> getCallToolMethod() {
-    io.grpc.MethodDescriptor<org.mcp.client.resources.CallToolRequest, org.mcp.server.resources.CallToolResult> getCallToolMethod;
+  public static io.grpc.MethodDescriptor<com.mcp.client.v1.CallToolRequest,
+      com.mcp.server.v1.CallToolResult> getCallToolMethod() {
+    io.grpc.MethodDescriptor<com.mcp.client.v1.CallToolRequest, com.mcp.server.v1.CallToolResult> getCallToolMethod;
     if ((getCallToolMethod = ServerServiceGrpc.getCallToolMethod) == null) {
       synchronized (ServerServiceGrpc.class) {
         if ((getCallToolMethod = ServerServiceGrpc.getCallToolMethod) == null) {
           ServerServiceGrpc.getCallToolMethod = getCallToolMethod =
-              io.grpc.MethodDescriptor.<org.mcp.client.resources.CallToolRequest, org.mcp.server.resources.CallToolResult>newBuilder()
+              io.grpc.MethodDescriptor.<com.mcp.client.v1.CallToolRequest, com.mcp.server.v1.CallToolResult>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CallTool"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.mcp.client.resources.CallToolRequest.getDefaultInstance()))
+                  com.mcp.client.v1.CallToolRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.mcp.server.resources.CallToolResult.getDefaultInstance()))
+                  com.mcp.server.v1.CallToolResult.getDefaultInstance()))
               .setSchemaDescriptor(new ServerServiceMethodDescriptorSupplier("CallTool"))
               .build();
         }
@@ -46,29 +46,29 @@ public final class ServerServiceGrpc {
     return getCallToolMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<org.mcp.client.resources.CompleteRequest,
-      org.mcp.server.resources.CompleteResult> getCompleteMethod;
+  private static volatile io.grpc.MethodDescriptor<com.mcp.client.v1.CompleteRequest,
+      com.mcp.server.v1.CompleteResult> getCompleteMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "Complete",
-      requestType = org.mcp.client.resources.CompleteRequest.class,
-      responseType = org.mcp.server.resources.CompleteResult.class,
+      requestType = com.mcp.client.v1.CompleteRequest.class,
+      responseType = com.mcp.server.v1.CompleteResult.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<org.mcp.client.resources.CompleteRequest,
-      org.mcp.server.resources.CompleteResult> getCompleteMethod() {
-    io.grpc.MethodDescriptor<org.mcp.client.resources.CompleteRequest, org.mcp.server.resources.CompleteResult> getCompleteMethod;
+  public static io.grpc.MethodDescriptor<com.mcp.client.v1.CompleteRequest,
+      com.mcp.server.v1.CompleteResult> getCompleteMethod() {
+    io.grpc.MethodDescriptor<com.mcp.client.v1.CompleteRequest, com.mcp.server.v1.CompleteResult> getCompleteMethod;
     if ((getCompleteMethod = ServerServiceGrpc.getCompleteMethod) == null) {
       synchronized (ServerServiceGrpc.class) {
         if ((getCompleteMethod = ServerServiceGrpc.getCompleteMethod) == null) {
           ServerServiceGrpc.getCompleteMethod = getCompleteMethod =
-              io.grpc.MethodDescriptor.<org.mcp.client.resources.CompleteRequest, org.mcp.server.resources.CompleteResult>newBuilder()
+              io.grpc.MethodDescriptor.<com.mcp.client.v1.CompleteRequest, com.mcp.server.v1.CompleteResult>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Complete"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.mcp.client.resources.CompleteRequest.getDefaultInstance()))
+                  com.mcp.client.v1.CompleteRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.mcp.server.resources.CompleteResult.getDefaultInstance()))
+                  com.mcp.server.v1.CompleteResult.getDefaultInstance()))
               .setSchemaDescriptor(new ServerServiceMethodDescriptorSupplier("Complete"))
               .build();
         }
@@ -77,29 +77,29 @@ public final class ServerServiceGrpc {
     return getCompleteMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<org.mcp.client.resources.GetPromptRequest,
-      org.mcp.server.resources.GetPromptResult> getGetPromptMethod;
+  private static volatile io.grpc.MethodDescriptor<com.mcp.client.v1.GetPromptRequest,
+      com.mcp.server.v1.GetPromptResult> getGetPromptMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "GetPrompt",
-      requestType = org.mcp.client.resources.GetPromptRequest.class,
-      responseType = org.mcp.server.resources.GetPromptResult.class,
+      requestType = com.mcp.client.v1.GetPromptRequest.class,
+      responseType = com.mcp.server.v1.GetPromptResult.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<org.mcp.client.resources.GetPromptRequest,
-      org.mcp.server.resources.GetPromptResult> getGetPromptMethod() {
-    io.grpc.MethodDescriptor<org.mcp.client.resources.GetPromptRequest, org.mcp.server.resources.GetPromptResult> getGetPromptMethod;
+  public static io.grpc.MethodDescriptor<com.mcp.client.v1.GetPromptRequest,
+      com.mcp.server.v1.GetPromptResult> getGetPromptMethod() {
+    io.grpc.MethodDescriptor<com.mcp.client.v1.GetPromptRequest, com.mcp.server.v1.GetPromptResult> getGetPromptMethod;
     if ((getGetPromptMethod = ServerServiceGrpc.getGetPromptMethod) == null) {
       synchronized (ServerServiceGrpc.class) {
         if ((getGetPromptMethod = ServerServiceGrpc.getGetPromptMethod) == null) {
           ServerServiceGrpc.getGetPromptMethod = getGetPromptMethod =
-              io.grpc.MethodDescriptor.<org.mcp.client.resources.GetPromptRequest, org.mcp.server.resources.GetPromptResult>newBuilder()
+              io.grpc.MethodDescriptor.<com.mcp.client.v1.GetPromptRequest, com.mcp.server.v1.GetPromptResult>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetPrompt"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.mcp.client.resources.GetPromptRequest.getDefaultInstance()))
+                  com.mcp.client.v1.GetPromptRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.mcp.server.resources.GetPromptResult.getDefaultInstance()))
+                  com.mcp.server.v1.GetPromptResult.getDefaultInstance()))
               .setSchemaDescriptor(new ServerServiceMethodDescriptorSupplier("GetPrompt"))
               .build();
         }
@@ -108,29 +108,29 @@ public final class ServerServiceGrpc {
     return getGetPromptMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<org.mcp.client.resources.InitializeRequest,
-      org.mcp.server.resources.InitializeResult> getInitializeMethod;
+  private static volatile io.grpc.MethodDescriptor<com.mcp.client.v1.InitializeRequest,
+      com.mcp.server.v1.InitializeResult> getInitializeMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "Initialize",
-      requestType = org.mcp.client.resources.InitializeRequest.class,
-      responseType = org.mcp.server.resources.InitializeResult.class,
+      requestType = com.mcp.client.v1.InitializeRequest.class,
+      responseType = com.mcp.server.v1.InitializeResult.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<org.mcp.client.resources.InitializeRequest,
-      org.mcp.server.resources.InitializeResult> getInitializeMethod() {
-    io.grpc.MethodDescriptor<org.mcp.client.resources.InitializeRequest, org.mcp.server.resources.InitializeResult> getInitializeMethod;
+  public static io.grpc.MethodDescriptor<com.mcp.client.v1.InitializeRequest,
+      com.mcp.server.v1.InitializeResult> getInitializeMethod() {
+    io.grpc.MethodDescriptor<com.mcp.client.v1.InitializeRequest, com.mcp.server.v1.InitializeResult> getInitializeMethod;
     if ((getInitializeMethod = ServerServiceGrpc.getInitializeMethod) == null) {
       synchronized (ServerServiceGrpc.class) {
         if ((getInitializeMethod = ServerServiceGrpc.getInitializeMethod) == null) {
           ServerServiceGrpc.getInitializeMethod = getInitializeMethod =
-              io.grpc.MethodDescriptor.<org.mcp.client.resources.InitializeRequest, org.mcp.server.resources.InitializeResult>newBuilder()
+              io.grpc.MethodDescriptor.<com.mcp.client.v1.InitializeRequest, com.mcp.server.v1.InitializeResult>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Initialize"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.mcp.client.resources.InitializeRequest.getDefaultInstance()))
+                  com.mcp.client.v1.InitializeRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.mcp.server.resources.InitializeResult.getDefaultInstance()))
+                  com.mcp.server.v1.InitializeResult.getDefaultInstance()))
               .setSchemaDescriptor(new ServerServiceMethodDescriptorSupplier("Initialize"))
               .build();
         }
@@ -139,29 +139,29 @@ public final class ServerServiceGrpc {
     return getInitializeMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<org.mcp.client.resources.ListPromptsRequest,
-      org.mcp.server.resources.ListPromptsResult> getListPromptsMethod;
+  private static volatile io.grpc.MethodDescriptor<com.mcp.client.v1.ListPromptsRequest,
+      com.mcp.server.v1.ListPromptsResult> getListPromptsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "ListPrompts",
-      requestType = org.mcp.client.resources.ListPromptsRequest.class,
-      responseType = org.mcp.server.resources.ListPromptsResult.class,
+      requestType = com.mcp.client.v1.ListPromptsRequest.class,
+      responseType = com.mcp.server.v1.ListPromptsResult.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<org.mcp.client.resources.ListPromptsRequest,
-      org.mcp.server.resources.ListPromptsResult> getListPromptsMethod() {
-    io.grpc.MethodDescriptor<org.mcp.client.resources.ListPromptsRequest, org.mcp.server.resources.ListPromptsResult> getListPromptsMethod;
+  public static io.grpc.MethodDescriptor<com.mcp.client.v1.ListPromptsRequest,
+      com.mcp.server.v1.ListPromptsResult> getListPromptsMethod() {
+    io.grpc.MethodDescriptor<com.mcp.client.v1.ListPromptsRequest, com.mcp.server.v1.ListPromptsResult> getListPromptsMethod;
     if ((getListPromptsMethod = ServerServiceGrpc.getListPromptsMethod) == null) {
       synchronized (ServerServiceGrpc.class) {
         if ((getListPromptsMethod = ServerServiceGrpc.getListPromptsMethod) == null) {
           ServerServiceGrpc.getListPromptsMethod = getListPromptsMethod =
-              io.grpc.MethodDescriptor.<org.mcp.client.resources.ListPromptsRequest, org.mcp.server.resources.ListPromptsResult>newBuilder()
+              io.grpc.MethodDescriptor.<com.mcp.client.v1.ListPromptsRequest, com.mcp.server.v1.ListPromptsResult>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListPrompts"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.mcp.client.resources.ListPromptsRequest.getDefaultInstance()))
+                  com.mcp.client.v1.ListPromptsRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.mcp.server.resources.ListPromptsResult.getDefaultInstance()))
+                  com.mcp.server.v1.ListPromptsResult.getDefaultInstance()))
               .setSchemaDescriptor(new ServerServiceMethodDescriptorSupplier("ListPrompts"))
               .build();
         }
@@ -170,29 +170,29 @@ public final class ServerServiceGrpc {
     return getListPromptsMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<org.mcp.client.resources.ListResourcesRequest,
-      org.mcp.server.resources.ListResourcesResult> getListResourcesMethod;
+  private static volatile io.grpc.MethodDescriptor<com.mcp.client.v1.ListResourcesRequest,
+      com.mcp.server.v1.ListResourcesResult> getListResourcesMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "ListResources",
-      requestType = org.mcp.client.resources.ListResourcesRequest.class,
-      responseType = org.mcp.server.resources.ListResourcesResult.class,
+      requestType = com.mcp.client.v1.ListResourcesRequest.class,
+      responseType = com.mcp.server.v1.ListResourcesResult.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<org.mcp.client.resources.ListResourcesRequest,
-      org.mcp.server.resources.ListResourcesResult> getListResourcesMethod() {
-    io.grpc.MethodDescriptor<org.mcp.client.resources.ListResourcesRequest, org.mcp.server.resources.ListResourcesResult> getListResourcesMethod;
+  public static io.grpc.MethodDescriptor<com.mcp.client.v1.ListResourcesRequest,
+      com.mcp.server.v1.ListResourcesResult> getListResourcesMethod() {
+    io.grpc.MethodDescriptor<com.mcp.client.v1.ListResourcesRequest, com.mcp.server.v1.ListResourcesResult> getListResourcesMethod;
     if ((getListResourcesMethod = ServerServiceGrpc.getListResourcesMethod) == null) {
       synchronized (ServerServiceGrpc.class) {
         if ((getListResourcesMethod = ServerServiceGrpc.getListResourcesMethod) == null) {
           ServerServiceGrpc.getListResourcesMethod = getListResourcesMethod =
-              io.grpc.MethodDescriptor.<org.mcp.client.resources.ListResourcesRequest, org.mcp.server.resources.ListResourcesResult>newBuilder()
+              io.grpc.MethodDescriptor.<com.mcp.client.v1.ListResourcesRequest, com.mcp.server.v1.ListResourcesResult>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListResources"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.mcp.client.resources.ListResourcesRequest.getDefaultInstance()))
+                  com.mcp.client.v1.ListResourcesRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.mcp.server.resources.ListResourcesResult.getDefaultInstance()))
+                  com.mcp.server.v1.ListResourcesResult.getDefaultInstance()))
               .setSchemaDescriptor(new ServerServiceMethodDescriptorSupplier("ListResources"))
               .build();
         }
@@ -201,29 +201,29 @@ public final class ServerServiceGrpc {
     return getListResourcesMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<org.mcp.client.resources.ListResourceTemplatesRequest,
-      org.mcp.server.resources.ListResourceTemplatesResult> getListResourceTemplatesMethod;
+  private static volatile io.grpc.MethodDescriptor<com.mcp.client.v1.ListResourceTemplatesRequest,
+      com.mcp.server.v1.ListResourceTemplatesResult> getListResourceTemplatesMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "ListResourceTemplates",
-      requestType = org.mcp.client.resources.ListResourceTemplatesRequest.class,
-      responseType = org.mcp.server.resources.ListResourceTemplatesResult.class,
+      requestType = com.mcp.client.v1.ListResourceTemplatesRequest.class,
+      responseType = com.mcp.server.v1.ListResourceTemplatesResult.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<org.mcp.client.resources.ListResourceTemplatesRequest,
-      org.mcp.server.resources.ListResourceTemplatesResult> getListResourceTemplatesMethod() {
-    io.grpc.MethodDescriptor<org.mcp.client.resources.ListResourceTemplatesRequest, org.mcp.server.resources.ListResourceTemplatesResult> getListResourceTemplatesMethod;
+  public static io.grpc.MethodDescriptor<com.mcp.client.v1.ListResourceTemplatesRequest,
+      com.mcp.server.v1.ListResourceTemplatesResult> getListResourceTemplatesMethod() {
+    io.grpc.MethodDescriptor<com.mcp.client.v1.ListResourceTemplatesRequest, com.mcp.server.v1.ListResourceTemplatesResult> getListResourceTemplatesMethod;
     if ((getListResourceTemplatesMethod = ServerServiceGrpc.getListResourceTemplatesMethod) == null) {
       synchronized (ServerServiceGrpc.class) {
         if ((getListResourceTemplatesMethod = ServerServiceGrpc.getListResourceTemplatesMethod) == null) {
           ServerServiceGrpc.getListResourceTemplatesMethod = getListResourceTemplatesMethod =
-              io.grpc.MethodDescriptor.<org.mcp.client.resources.ListResourceTemplatesRequest, org.mcp.server.resources.ListResourceTemplatesResult>newBuilder()
+              io.grpc.MethodDescriptor.<com.mcp.client.v1.ListResourceTemplatesRequest, com.mcp.server.v1.ListResourceTemplatesResult>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListResourceTemplates"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.mcp.client.resources.ListResourceTemplatesRequest.getDefaultInstance()))
+                  com.mcp.client.v1.ListResourceTemplatesRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.mcp.server.resources.ListResourceTemplatesResult.getDefaultInstance()))
+                  com.mcp.server.v1.ListResourceTemplatesResult.getDefaultInstance()))
               .setSchemaDescriptor(new ServerServiceMethodDescriptorSupplier("ListResourceTemplates"))
               .build();
         }
@@ -232,29 +232,29 @@ public final class ServerServiceGrpc {
     return getListResourceTemplatesMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<org.mcp.client.resources.ListToolsRequest,
-      org.mcp.server.resources.ListToolsResult> getListToolsMethod;
+  private static volatile io.grpc.MethodDescriptor<com.mcp.client.v1.ListToolsRequest,
+      com.mcp.server.v1.ListToolsResult> getListToolsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "ListTools",
-      requestType = org.mcp.client.resources.ListToolsRequest.class,
-      responseType = org.mcp.server.resources.ListToolsResult.class,
+      requestType = com.mcp.client.v1.ListToolsRequest.class,
+      responseType = com.mcp.server.v1.ListToolsResult.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<org.mcp.client.resources.ListToolsRequest,
-      org.mcp.server.resources.ListToolsResult> getListToolsMethod() {
-    io.grpc.MethodDescriptor<org.mcp.client.resources.ListToolsRequest, org.mcp.server.resources.ListToolsResult> getListToolsMethod;
+  public static io.grpc.MethodDescriptor<com.mcp.client.v1.ListToolsRequest,
+      com.mcp.server.v1.ListToolsResult> getListToolsMethod() {
+    io.grpc.MethodDescriptor<com.mcp.client.v1.ListToolsRequest, com.mcp.server.v1.ListToolsResult> getListToolsMethod;
     if ((getListToolsMethod = ServerServiceGrpc.getListToolsMethod) == null) {
       synchronized (ServerServiceGrpc.class) {
         if ((getListToolsMethod = ServerServiceGrpc.getListToolsMethod) == null) {
           ServerServiceGrpc.getListToolsMethod = getListToolsMethod =
-              io.grpc.MethodDescriptor.<org.mcp.client.resources.ListToolsRequest, org.mcp.server.resources.ListToolsResult>newBuilder()
+              io.grpc.MethodDescriptor.<com.mcp.client.v1.ListToolsRequest, com.mcp.server.v1.ListToolsResult>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListTools"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.mcp.client.resources.ListToolsRequest.getDefaultInstance()))
+                  com.mcp.client.v1.ListToolsRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.mcp.server.resources.ListToolsResult.getDefaultInstance()))
+                  com.mcp.server.v1.ListToolsResult.getDefaultInstance()))
               .setSchemaDescriptor(new ServerServiceMethodDescriptorSupplier("ListTools"))
               .build();
         }
@@ -263,27 +263,27 @@ public final class ServerServiceGrpc {
     return getListToolsMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<org.mcp.client.resources.PingRequest,
+  private static volatile io.grpc.MethodDescriptor<com.mcp.client.v1.PingRequest,
       com.google.protobuf.Empty> getPingMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "Ping",
-      requestType = org.mcp.client.resources.PingRequest.class,
+      requestType = com.mcp.client.v1.PingRequest.class,
       responseType = com.google.protobuf.Empty.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<org.mcp.client.resources.PingRequest,
+  public static io.grpc.MethodDescriptor<com.mcp.client.v1.PingRequest,
       com.google.protobuf.Empty> getPingMethod() {
-    io.grpc.MethodDescriptor<org.mcp.client.resources.PingRequest, com.google.protobuf.Empty> getPingMethod;
+    io.grpc.MethodDescriptor<com.mcp.client.v1.PingRequest, com.google.protobuf.Empty> getPingMethod;
     if ((getPingMethod = ServerServiceGrpc.getPingMethod) == null) {
       synchronized (ServerServiceGrpc.class) {
         if ((getPingMethod = ServerServiceGrpc.getPingMethod) == null) {
           ServerServiceGrpc.getPingMethod = getPingMethod =
-              io.grpc.MethodDescriptor.<org.mcp.client.resources.PingRequest, com.google.protobuf.Empty>newBuilder()
+              io.grpc.MethodDescriptor.<com.mcp.client.v1.PingRequest, com.google.protobuf.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Ping"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.mcp.client.resources.PingRequest.getDefaultInstance()))
+                  com.mcp.client.v1.PingRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.google.protobuf.Empty.getDefaultInstance()))
               .setSchemaDescriptor(new ServerServiceMethodDescriptorSupplier("Ping"))
@@ -294,29 +294,29 @@ public final class ServerServiceGrpc {
     return getPingMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<org.mcp.client.resources.ReadResourceRequest,
-      org.mcp.server.resources.ReadResourceResult> getReadResourceMethod;
+  private static volatile io.grpc.MethodDescriptor<com.mcp.client.v1.ReadResourceRequest,
+      com.mcp.server.v1.ReadResourceResult> getReadResourceMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "ReadResource",
-      requestType = org.mcp.client.resources.ReadResourceRequest.class,
-      responseType = org.mcp.server.resources.ReadResourceResult.class,
+      requestType = com.mcp.client.v1.ReadResourceRequest.class,
+      responseType = com.mcp.server.v1.ReadResourceResult.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<org.mcp.client.resources.ReadResourceRequest,
-      org.mcp.server.resources.ReadResourceResult> getReadResourceMethod() {
-    io.grpc.MethodDescriptor<org.mcp.client.resources.ReadResourceRequest, org.mcp.server.resources.ReadResourceResult> getReadResourceMethod;
+  public static io.grpc.MethodDescriptor<com.mcp.client.v1.ReadResourceRequest,
+      com.mcp.server.v1.ReadResourceResult> getReadResourceMethod() {
+    io.grpc.MethodDescriptor<com.mcp.client.v1.ReadResourceRequest, com.mcp.server.v1.ReadResourceResult> getReadResourceMethod;
     if ((getReadResourceMethod = ServerServiceGrpc.getReadResourceMethod) == null) {
       synchronized (ServerServiceGrpc.class) {
         if ((getReadResourceMethod = ServerServiceGrpc.getReadResourceMethod) == null) {
           ServerServiceGrpc.getReadResourceMethod = getReadResourceMethod =
-              io.grpc.MethodDescriptor.<org.mcp.client.resources.ReadResourceRequest, org.mcp.server.resources.ReadResourceResult>newBuilder()
+              io.grpc.MethodDescriptor.<com.mcp.client.v1.ReadResourceRequest, com.mcp.server.v1.ReadResourceResult>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ReadResource"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.mcp.client.resources.ReadResourceRequest.getDefaultInstance()))
+                  com.mcp.client.v1.ReadResourceRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.mcp.server.resources.ReadResourceResult.getDefaultInstance()))
+                  com.mcp.server.v1.ReadResourceResult.getDefaultInstance()))
               .setSchemaDescriptor(new ServerServiceMethodDescriptorSupplier("ReadResource"))
               .build();
         }
@@ -325,27 +325,27 @@ public final class ServerServiceGrpc {
     return getReadResourceMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<org.mcp.client.resources.SetLevelRequest,
+  private static volatile io.grpc.MethodDescriptor<com.mcp.client.v1.SetLevelRequest,
       com.google.protobuf.Empty> getSetLevelMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "SetLevel",
-      requestType = org.mcp.client.resources.SetLevelRequest.class,
+      requestType = com.mcp.client.v1.SetLevelRequest.class,
       responseType = com.google.protobuf.Empty.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<org.mcp.client.resources.SetLevelRequest,
+  public static io.grpc.MethodDescriptor<com.mcp.client.v1.SetLevelRequest,
       com.google.protobuf.Empty> getSetLevelMethod() {
-    io.grpc.MethodDescriptor<org.mcp.client.resources.SetLevelRequest, com.google.protobuf.Empty> getSetLevelMethod;
+    io.grpc.MethodDescriptor<com.mcp.client.v1.SetLevelRequest, com.google.protobuf.Empty> getSetLevelMethod;
     if ((getSetLevelMethod = ServerServiceGrpc.getSetLevelMethod) == null) {
       synchronized (ServerServiceGrpc.class) {
         if ((getSetLevelMethod = ServerServiceGrpc.getSetLevelMethod) == null) {
           ServerServiceGrpc.getSetLevelMethod = getSetLevelMethod =
-              io.grpc.MethodDescriptor.<org.mcp.client.resources.SetLevelRequest, com.google.protobuf.Empty>newBuilder()
+              io.grpc.MethodDescriptor.<com.mcp.client.v1.SetLevelRequest, com.google.protobuf.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SetLevel"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.mcp.client.resources.SetLevelRequest.getDefaultInstance()))
+                  com.mcp.client.v1.SetLevelRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.google.protobuf.Empty.getDefaultInstance()))
               .setSchemaDescriptor(new ServerServiceMethodDescriptorSupplier("SetLevel"))
@@ -356,27 +356,27 @@ public final class ServerServiceGrpc {
     return getSetLevelMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<org.mcp.client.resources.SubscribeRequest,
+  private static volatile io.grpc.MethodDescriptor<com.mcp.client.v1.SubscribeRequest,
       com.google.protobuf.Empty> getSubscribeMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "Subscribe",
-      requestType = org.mcp.client.resources.SubscribeRequest.class,
+      requestType = com.mcp.client.v1.SubscribeRequest.class,
       responseType = com.google.protobuf.Empty.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<org.mcp.client.resources.SubscribeRequest,
+  public static io.grpc.MethodDescriptor<com.mcp.client.v1.SubscribeRequest,
       com.google.protobuf.Empty> getSubscribeMethod() {
-    io.grpc.MethodDescriptor<org.mcp.client.resources.SubscribeRequest, com.google.protobuf.Empty> getSubscribeMethod;
+    io.grpc.MethodDescriptor<com.mcp.client.v1.SubscribeRequest, com.google.protobuf.Empty> getSubscribeMethod;
     if ((getSubscribeMethod = ServerServiceGrpc.getSubscribeMethod) == null) {
       synchronized (ServerServiceGrpc.class) {
         if ((getSubscribeMethod = ServerServiceGrpc.getSubscribeMethod) == null) {
           ServerServiceGrpc.getSubscribeMethod = getSubscribeMethod =
-              io.grpc.MethodDescriptor.<org.mcp.client.resources.SubscribeRequest, com.google.protobuf.Empty>newBuilder()
+              io.grpc.MethodDescriptor.<com.mcp.client.v1.SubscribeRequest, com.google.protobuf.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Subscribe"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.mcp.client.resources.SubscribeRequest.getDefaultInstance()))
+                  com.mcp.client.v1.SubscribeRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.google.protobuf.Empty.getDefaultInstance()))
               .setSchemaDescriptor(new ServerServiceMethodDescriptorSupplier("Subscribe"))
@@ -387,27 +387,27 @@ public final class ServerServiceGrpc {
     return getSubscribeMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<org.mcp.client.resources.UnsubscribeRequest,
+  private static volatile io.grpc.MethodDescriptor<com.mcp.client.v1.UnsubscribeRequest,
       com.google.protobuf.Empty> getUnsubscribeMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "Unsubscribe",
-      requestType = org.mcp.client.resources.UnsubscribeRequest.class,
+      requestType = com.mcp.client.v1.UnsubscribeRequest.class,
       responseType = com.google.protobuf.Empty.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<org.mcp.client.resources.UnsubscribeRequest,
+  public static io.grpc.MethodDescriptor<com.mcp.client.v1.UnsubscribeRequest,
       com.google.protobuf.Empty> getUnsubscribeMethod() {
-    io.grpc.MethodDescriptor<org.mcp.client.resources.UnsubscribeRequest, com.google.protobuf.Empty> getUnsubscribeMethod;
+    io.grpc.MethodDescriptor<com.mcp.client.v1.UnsubscribeRequest, com.google.protobuf.Empty> getUnsubscribeMethod;
     if ((getUnsubscribeMethod = ServerServiceGrpc.getUnsubscribeMethod) == null) {
       synchronized (ServerServiceGrpc.class) {
         if ((getUnsubscribeMethod = ServerServiceGrpc.getUnsubscribeMethod) == null) {
           ServerServiceGrpc.getUnsubscribeMethod = getUnsubscribeMethod =
-              io.grpc.MethodDescriptor.<org.mcp.client.resources.UnsubscribeRequest, com.google.protobuf.Empty>newBuilder()
+              io.grpc.MethodDescriptor.<com.mcp.client.v1.UnsubscribeRequest, com.google.protobuf.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Unsubscribe"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.mcp.client.resources.UnsubscribeRequest.getDefaultInstance()))
+                  com.mcp.client.v1.UnsubscribeRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.google.protobuf.Empty.getDefaultInstance()))
               .setSchemaDescriptor(new ServerServiceMethodDescriptorSupplier("Unsubscribe"))
@@ -489,8 +489,8 @@ public final class ServerServiceGrpc {
      * Invoke a tool by name.
      * </pre>
      */
-    default void callTool(org.mcp.client.resources.CallToolRequest request,
-        io.grpc.stub.StreamObserver<org.mcp.server.resources.CallToolResult> responseObserver) {
+    default void callTool(com.mcp.client.v1.CallToolRequest request,
+        io.grpc.stub.StreamObserver<com.mcp.server.v1.CallToolResult> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCallToolMethod(), responseObserver);
     }
 
@@ -499,8 +499,8 @@ public final class ServerServiceGrpc {
      * Ask for completion options.
      * </pre>
      */
-    default void complete(org.mcp.client.resources.CompleteRequest request,
-        io.grpc.stub.StreamObserver<org.mcp.server.resources.CompleteResult> responseObserver) {
+    default void complete(com.mcp.client.v1.CompleteRequest request,
+        io.grpc.stub.StreamObserver<com.mcp.server.v1.CompleteResult> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCompleteMethod(), responseObserver);
     }
 
@@ -509,8 +509,8 @@ public final class ServerServiceGrpc {
      * Retrieve a single prompt by name.
      * </pre>
      */
-    default void getPrompt(org.mcp.client.resources.GetPromptRequest request,
-        io.grpc.stub.StreamObserver<org.mcp.server.resources.GetPromptResult> responseObserver) {
+    default void getPrompt(com.mcp.client.v1.GetPromptRequest request,
+        io.grpc.stub.StreamObserver<com.mcp.server.v1.GetPromptResult> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetPromptMethod(), responseObserver);
     }
 
@@ -519,8 +519,8 @@ public final class ServerServiceGrpc {
      * Initiate the connection with the server.
      * </pre>
      */
-    default void initialize(org.mcp.client.resources.InitializeRequest request,
-        io.grpc.stub.StreamObserver<org.mcp.server.resources.InitializeResult> responseObserver) {
+    default void initialize(com.mcp.client.v1.InitializeRequest request,
+        io.grpc.stub.StreamObserver<com.mcp.server.v1.InitializeResult> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getInitializeMethod(), responseObserver);
     }
 
@@ -529,8 +529,8 @@ public final class ServerServiceGrpc {
      * List available prompts.
      * </pre>
      */
-    default void listPrompts(org.mcp.client.resources.ListPromptsRequest request,
-        io.grpc.stub.StreamObserver<org.mcp.server.resources.ListPromptsResult> responseObserver) {
+    default void listPrompts(com.mcp.client.v1.ListPromptsRequest request,
+        io.grpc.stub.StreamObserver<com.mcp.server.v1.ListPromptsResult> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListPromptsMethod(), responseObserver);
     }
 
@@ -539,8 +539,8 @@ public final class ServerServiceGrpc {
      * List available resources.
      * </pre>
      */
-    default void listResources(org.mcp.client.resources.ListResourcesRequest request,
-        io.grpc.stub.StreamObserver<org.mcp.server.resources.ListResourcesResult> responseObserver) {
+    default void listResources(com.mcp.client.v1.ListResourcesRequest request,
+        io.grpc.stub.StreamObserver<com.mcp.server.v1.ListResourcesResult> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListResourcesMethod(), responseObserver);
     }
 
@@ -549,8 +549,8 @@ public final class ServerServiceGrpc {
      * List available resource templates.
      * </pre>
      */
-    default void listResourceTemplates(org.mcp.client.resources.ListResourceTemplatesRequest request,
-        io.grpc.stub.StreamObserver<org.mcp.server.resources.ListResourceTemplatesResult> responseObserver) {
+    default void listResourceTemplates(com.mcp.client.v1.ListResourceTemplatesRequest request,
+        io.grpc.stub.StreamObserver<com.mcp.server.v1.ListResourceTemplatesResult> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListResourceTemplatesMethod(), responseObserver);
     }
 
@@ -559,8 +559,8 @@ public final class ServerServiceGrpc {
      * List available tools.
      * </pre>
      */
-    default void listTools(org.mcp.client.resources.ListToolsRequest request,
-        io.grpc.stub.StreamObserver<org.mcp.server.resources.ListToolsResult> responseObserver) {
+    default void listTools(com.mcp.client.v1.ListToolsRequest request,
+        io.grpc.stub.StreamObserver<com.mcp.server.v1.ListToolsResult> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListToolsMethod(), responseObserver);
     }
 
@@ -569,7 +569,7 @@ public final class ServerServiceGrpc {
      * Ping the other party to check if it is still alive.
      * </pre>
      */
-    default void ping(org.mcp.client.resources.PingRequest request,
+    default void ping(com.mcp.client.v1.PingRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPingMethod(), responseObserver);
     }
@@ -579,8 +579,8 @@ public final class ServerServiceGrpc {
      * Read a specific resource by URI.
      * </pre>
      */
-    default void readResource(org.mcp.client.resources.ReadResourceRequest request,
-        io.grpc.stub.StreamObserver<org.mcp.server.resources.ReadResourceResult> responseObserver) {
+    default void readResource(com.mcp.client.v1.ReadResourceRequest request,
+        io.grpc.stub.StreamObserver<com.mcp.server.v1.ReadResourceResult> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getReadResourceMethod(), responseObserver);
     }
 
@@ -589,7 +589,7 @@ public final class ServerServiceGrpc {
      * Set the minimum log level for notifications.
      * </pre>
      */
-    default void setLevel(org.mcp.client.resources.SetLevelRequest request,
+    default void setLevel(com.mcp.client.v1.SetLevelRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSetLevelMethod(), responseObserver);
     }
@@ -599,7 +599,7 @@ public final class ServerServiceGrpc {
      * Request resources/updated notifications for a resource.
      * </pre>
      */
-    default void subscribe(org.mcp.client.resources.SubscribeRequest request,
+    default void subscribe(com.mcp.client.v1.SubscribeRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSubscribeMethod(), responseObserver);
     }
@@ -609,7 +609,7 @@ public final class ServerServiceGrpc {
      * Request cancellation of resources/updated notifications.
      * </pre>
      */
-    default void unsubscribe(org.mcp.client.resources.UnsubscribeRequest request,
+    default void unsubscribe(com.mcp.client.v1.UnsubscribeRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUnsubscribeMethod(), responseObserver);
     }
@@ -653,8 +653,8 @@ public final class ServerServiceGrpc {
      * Invoke a tool by name.
      * </pre>
      */
-    public void callTool(org.mcp.client.resources.CallToolRequest request,
-        io.grpc.stub.StreamObserver<org.mcp.server.resources.CallToolResult> responseObserver) {
+    public void callTool(com.mcp.client.v1.CallToolRequest request,
+        io.grpc.stub.StreamObserver<com.mcp.server.v1.CallToolResult> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCallToolMethod(), getCallOptions()), request, responseObserver);
     }
@@ -664,8 +664,8 @@ public final class ServerServiceGrpc {
      * Ask for completion options.
      * </pre>
      */
-    public void complete(org.mcp.client.resources.CompleteRequest request,
-        io.grpc.stub.StreamObserver<org.mcp.server.resources.CompleteResult> responseObserver) {
+    public void complete(com.mcp.client.v1.CompleteRequest request,
+        io.grpc.stub.StreamObserver<com.mcp.server.v1.CompleteResult> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCompleteMethod(), getCallOptions()), request, responseObserver);
     }
@@ -675,8 +675,8 @@ public final class ServerServiceGrpc {
      * Retrieve a single prompt by name.
      * </pre>
      */
-    public void getPrompt(org.mcp.client.resources.GetPromptRequest request,
-        io.grpc.stub.StreamObserver<org.mcp.server.resources.GetPromptResult> responseObserver) {
+    public void getPrompt(com.mcp.client.v1.GetPromptRequest request,
+        io.grpc.stub.StreamObserver<com.mcp.server.v1.GetPromptResult> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetPromptMethod(), getCallOptions()), request, responseObserver);
     }
@@ -686,8 +686,8 @@ public final class ServerServiceGrpc {
      * Initiate the connection with the server.
      * </pre>
      */
-    public void initialize(org.mcp.client.resources.InitializeRequest request,
-        io.grpc.stub.StreamObserver<org.mcp.server.resources.InitializeResult> responseObserver) {
+    public void initialize(com.mcp.client.v1.InitializeRequest request,
+        io.grpc.stub.StreamObserver<com.mcp.server.v1.InitializeResult> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getInitializeMethod(), getCallOptions()), request, responseObserver);
     }
@@ -697,8 +697,8 @@ public final class ServerServiceGrpc {
      * List available prompts.
      * </pre>
      */
-    public void listPrompts(org.mcp.client.resources.ListPromptsRequest request,
-        io.grpc.stub.StreamObserver<org.mcp.server.resources.ListPromptsResult> responseObserver) {
+    public void listPrompts(com.mcp.client.v1.ListPromptsRequest request,
+        io.grpc.stub.StreamObserver<com.mcp.server.v1.ListPromptsResult> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListPromptsMethod(), getCallOptions()), request, responseObserver);
     }
@@ -708,8 +708,8 @@ public final class ServerServiceGrpc {
      * List available resources.
      * </pre>
      */
-    public void listResources(org.mcp.client.resources.ListResourcesRequest request,
-        io.grpc.stub.StreamObserver<org.mcp.server.resources.ListResourcesResult> responseObserver) {
+    public void listResources(com.mcp.client.v1.ListResourcesRequest request,
+        io.grpc.stub.StreamObserver<com.mcp.server.v1.ListResourcesResult> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListResourcesMethod(), getCallOptions()), request, responseObserver);
     }
@@ -719,8 +719,8 @@ public final class ServerServiceGrpc {
      * List available resource templates.
      * </pre>
      */
-    public void listResourceTemplates(org.mcp.client.resources.ListResourceTemplatesRequest request,
-        io.grpc.stub.StreamObserver<org.mcp.server.resources.ListResourceTemplatesResult> responseObserver) {
+    public void listResourceTemplates(com.mcp.client.v1.ListResourceTemplatesRequest request,
+        io.grpc.stub.StreamObserver<com.mcp.server.v1.ListResourceTemplatesResult> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListResourceTemplatesMethod(), getCallOptions()), request, responseObserver);
     }
@@ -730,8 +730,8 @@ public final class ServerServiceGrpc {
      * List available tools.
      * </pre>
      */
-    public void listTools(org.mcp.client.resources.ListToolsRequest request,
-        io.grpc.stub.StreamObserver<org.mcp.server.resources.ListToolsResult> responseObserver) {
+    public void listTools(com.mcp.client.v1.ListToolsRequest request,
+        io.grpc.stub.StreamObserver<com.mcp.server.v1.ListToolsResult> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListToolsMethod(), getCallOptions()), request, responseObserver);
     }
@@ -741,7 +741,7 @@ public final class ServerServiceGrpc {
      * Ping the other party to check if it is still alive.
      * </pre>
      */
-    public void ping(org.mcp.client.resources.PingRequest request,
+    public void ping(com.mcp.client.v1.PingRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getPingMethod(), getCallOptions()), request, responseObserver);
@@ -752,8 +752,8 @@ public final class ServerServiceGrpc {
      * Read a specific resource by URI.
      * </pre>
      */
-    public void readResource(org.mcp.client.resources.ReadResourceRequest request,
-        io.grpc.stub.StreamObserver<org.mcp.server.resources.ReadResourceResult> responseObserver) {
+    public void readResource(com.mcp.client.v1.ReadResourceRequest request,
+        io.grpc.stub.StreamObserver<com.mcp.server.v1.ReadResourceResult> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getReadResourceMethod(), getCallOptions()), request, responseObserver);
     }
@@ -763,7 +763,7 @@ public final class ServerServiceGrpc {
      * Set the minimum log level for notifications.
      * </pre>
      */
-    public void setLevel(org.mcp.client.resources.SetLevelRequest request,
+    public void setLevel(com.mcp.client.v1.SetLevelRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSetLevelMethod(), getCallOptions()), request, responseObserver);
@@ -774,7 +774,7 @@ public final class ServerServiceGrpc {
      * Request resources/updated notifications for a resource.
      * </pre>
      */
-    public void subscribe(org.mcp.client.resources.SubscribeRequest request,
+    public void subscribe(com.mcp.client.v1.SubscribeRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSubscribeMethod(), getCallOptions()), request, responseObserver);
@@ -785,7 +785,7 @@ public final class ServerServiceGrpc {
      * Request cancellation of resources/updated notifications.
      * </pre>
      */
-    public void unsubscribe(org.mcp.client.resources.UnsubscribeRequest request,
+    public void unsubscribe(com.mcp.client.v1.UnsubscribeRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUnsubscribeMethod(), getCallOptions()), request, responseObserver);
@@ -816,7 +816,7 @@ public final class ServerServiceGrpc {
      * Invoke a tool by name.
      * </pre>
      */
-    public org.mcp.server.resources.CallToolResult callTool(org.mcp.client.resources.CallToolRequest request) throws io.grpc.StatusException {
+    public com.mcp.server.v1.CallToolResult callTool(com.mcp.client.v1.CallToolRequest request) throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCallToolMethod(), getCallOptions(), request);
     }
@@ -826,7 +826,7 @@ public final class ServerServiceGrpc {
      * Ask for completion options.
      * </pre>
      */
-    public org.mcp.server.resources.CompleteResult complete(org.mcp.client.resources.CompleteRequest request) throws io.grpc.StatusException {
+    public com.mcp.server.v1.CompleteResult complete(com.mcp.client.v1.CompleteRequest request) throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCompleteMethod(), getCallOptions(), request);
     }
@@ -836,7 +836,7 @@ public final class ServerServiceGrpc {
      * Retrieve a single prompt by name.
      * </pre>
      */
-    public org.mcp.server.resources.GetPromptResult getPrompt(org.mcp.client.resources.GetPromptRequest request) throws io.grpc.StatusException {
+    public com.mcp.server.v1.GetPromptResult getPrompt(com.mcp.client.v1.GetPromptRequest request) throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetPromptMethod(), getCallOptions(), request);
     }
@@ -846,7 +846,7 @@ public final class ServerServiceGrpc {
      * Initiate the connection with the server.
      * </pre>
      */
-    public org.mcp.server.resources.InitializeResult initialize(org.mcp.client.resources.InitializeRequest request) throws io.grpc.StatusException {
+    public com.mcp.server.v1.InitializeResult initialize(com.mcp.client.v1.InitializeRequest request) throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getInitializeMethod(), getCallOptions(), request);
     }
@@ -856,7 +856,7 @@ public final class ServerServiceGrpc {
      * List available prompts.
      * </pre>
      */
-    public org.mcp.server.resources.ListPromptsResult listPrompts(org.mcp.client.resources.ListPromptsRequest request) throws io.grpc.StatusException {
+    public com.mcp.server.v1.ListPromptsResult listPrompts(com.mcp.client.v1.ListPromptsRequest request) throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListPromptsMethod(), getCallOptions(), request);
     }
@@ -866,7 +866,7 @@ public final class ServerServiceGrpc {
      * List available resources.
      * </pre>
      */
-    public org.mcp.server.resources.ListResourcesResult listResources(org.mcp.client.resources.ListResourcesRequest request) throws io.grpc.StatusException {
+    public com.mcp.server.v1.ListResourcesResult listResources(com.mcp.client.v1.ListResourcesRequest request) throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListResourcesMethod(), getCallOptions(), request);
     }
@@ -876,7 +876,7 @@ public final class ServerServiceGrpc {
      * List available resource templates.
      * </pre>
      */
-    public org.mcp.server.resources.ListResourceTemplatesResult listResourceTemplates(org.mcp.client.resources.ListResourceTemplatesRequest request) throws io.grpc.StatusException {
+    public com.mcp.server.v1.ListResourceTemplatesResult listResourceTemplates(com.mcp.client.v1.ListResourceTemplatesRequest request) throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListResourceTemplatesMethod(), getCallOptions(), request);
     }
@@ -886,7 +886,7 @@ public final class ServerServiceGrpc {
      * List available tools.
      * </pre>
      */
-    public org.mcp.server.resources.ListToolsResult listTools(org.mcp.client.resources.ListToolsRequest request) throws io.grpc.StatusException {
+    public com.mcp.server.v1.ListToolsResult listTools(com.mcp.client.v1.ListToolsRequest request) throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListToolsMethod(), getCallOptions(), request);
     }
@@ -896,7 +896,7 @@ public final class ServerServiceGrpc {
      * Ping the other party to check if it is still alive.
      * </pre>
      */
-    public com.google.protobuf.Empty ping(org.mcp.client.resources.PingRequest request) throws io.grpc.StatusException {
+    public com.google.protobuf.Empty ping(com.mcp.client.v1.PingRequest request) throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getPingMethod(), getCallOptions(), request);
     }
@@ -906,7 +906,7 @@ public final class ServerServiceGrpc {
      * Read a specific resource by URI.
      * </pre>
      */
-    public org.mcp.server.resources.ReadResourceResult readResource(org.mcp.client.resources.ReadResourceRequest request) throws io.grpc.StatusException {
+    public com.mcp.server.v1.ReadResourceResult readResource(com.mcp.client.v1.ReadResourceRequest request) throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getReadResourceMethod(), getCallOptions(), request);
     }
@@ -916,7 +916,7 @@ public final class ServerServiceGrpc {
      * Set the minimum log level for notifications.
      * </pre>
      */
-    public com.google.protobuf.Empty setLevel(org.mcp.client.resources.SetLevelRequest request) throws io.grpc.StatusException {
+    public com.google.protobuf.Empty setLevel(com.mcp.client.v1.SetLevelRequest request) throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetLevelMethod(), getCallOptions(), request);
     }
@@ -926,7 +926,7 @@ public final class ServerServiceGrpc {
      * Request resources/updated notifications for a resource.
      * </pre>
      */
-    public com.google.protobuf.Empty subscribe(org.mcp.client.resources.SubscribeRequest request) throws io.grpc.StatusException {
+    public com.google.protobuf.Empty subscribe(com.mcp.client.v1.SubscribeRequest request) throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSubscribeMethod(), getCallOptions(), request);
     }
@@ -936,7 +936,7 @@ public final class ServerServiceGrpc {
      * Request cancellation of resources/updated notifications.
      * </pre>
      */
-    public com.google.protobuf.Empty unsubscribe(org.mcp.client.resources.UnsubscribeRequest request) throws io.grpc.StatusException {
+    public com.google.protobuf.Empty unsubscribe(com.mcp.client.v1.UnsubscribeRequest request) throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUnsubscribeMethod(), getCallOptions(), request);
     }
@@ -966,7 +966,7 @@ public final class ServerServiceGrpc {
      * Invoke a tool by name.
      * </pre>
      */
-    public org.mcp.server.resources.CallToolResult callTool(org.mcp.client.resources.CallToolRequest request) {
+    public com.mcp.server.v1.CallToolResult callTool(com.mcp.client.v1.CallToolRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCallToolMethod(), getCallOptions(), request);
     }
@@ -976,7 +976,7 @@ public final class ServerServiceGrpc {
      * Ask for completion options.
      * </pre>
      */
-    public org.mcp.server.resources.CompleteResult complete(org.mcp.client.resources.CompleteRequest request) {
+    public com.mcp.server.v1.CompleteResult complete(com.mcp.client.v1.CompleteRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCompleteMethod(), getCallOptions(), request);
     }
@@ -986,7 +986,7 @@ public final class ServerServiceGrpc {
      * Retrieve a single prompt by name.
      * </pre>
      */
-    public org.mcp.server.resources.GetPromptResult getPrompt(org.mcp.client.resources.GetPromptRequest request) {
+    public com.mcp.server.v1.GetPromptResult getPrompt(com.mcp.client.v1.GetPromptRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetPromptMethod(), getCallOptions(), request);
     }
@@ -996,7 +996,7 @@ public final class ServerServiceGrpc {
      * Initiate the connection with the server.
      * </pre>
      */
-    public org.mcp.server.resources.InitializeResult initialize(org.mcp.client.resources.InitializeRequest request) {
+    public com.mcp.server.v1.InitializeResult initialize(com.mcp.client.v1.InitializeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getInitializeMethod(), getCallOptions(), request);
     }
@@ -1006,7 +1006,7 @@ public final class ServerServiceGrpc {
      * List available prompts.
      * </pre>
      */
-    public org.mcp.server.resources.ListPromptsResult listPrompts(org.mcp.client.resources.ListPromptsRequest request) {
+    public com.mcp.server.v1.ListPromptsResult listPrompts(com.mcp.client.v1.ListPromptsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListPromptsMethod(), getCallOptions(), request);
     }
@@ -1016,7 +1016,7 @@ public final class ServerServiceGrpc {
      * List available resources.
      * </pre>
      */
-    public org.mcp.server.resources.ListResourcesResult listResources(org.mcp.client.resources.ListResourcesRequest request) {
+    public com.mcp.server.v1.ListResourcesResult listResources(com.mcp.client.v1.ListResourcesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListResourcesMethod(), getCallOptions(), request);
     }
@@ -1026,7 +1026,7 @@ public final class ServerServiceGrpc {
      * List available resource templates.
      * </pre>
      */
-    public org.mcp.server.resources.ListResourceTemplatesResult listResourceTemplates(org.mcp.client.resources.ListResourceTemplatesRequest request) {
+    public com.mcp.server.v1.ListResourceTemplatesResult listResourceTemplates(com.mcp.client.v1.ListResourceTemplatesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListResourceTemplatesMethod(), getCallOptions(), request);
     }
@@ -1036,7 +1036,7 @@ public final class ServerServiceGrpc {
      * List available tools.
      * </pre>
      */
-    public org.mcp.server.resources.ListToolsResult listTools(org.mcp.client.resources.ListToolsRequest request) {
+    public com.mcp.server.v1.ListToolsResult listTools(com.mcp.client.v1.ListToolsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListToolsMethod(), getCallOptions(), request);
     }
@@ -1046,7 +1046,7 @@ public final class ServerServiceGrpc {
      * Ping the other party to check if it is still alive.
      * </pre>
      */
-    public com.google.protobuf.Empty ping(org.mcp.client.resources.PingRequest request) {
+    public com.google.protobuf.Empty ping(com.mcp.client.v1.PingRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getPingMethod(), getCallOptions(), request);
     }
@@ -1056,7 +1056,7 @@ public final class ServerServiceGrpc {
      * Read a specific resource by URI.
      * </pre>
      */
-    public org.mcp.server.resources.ReadResourceResult readResource(org.mcp.client.resources.ReadResourceRequest request) {
+    public com.mcp.server.v1.ReadResourceResult readResource(com.mcp.client.v1.ReadResourceRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getReadResourceMethod(), getCallOptions(), request);
     }
@@ -1066,7 +1066,7 @@ public final class ServerServiceGrpc {
      * Set the minimum log level for notifications.
      * </pre>
      */
-    public com.google.protobuf.Empty setLevel(org.mcp.client.resources.SetLevelRequest request) {
+    public com.google.protobuf.Empty setLevel(com.mcp.client.v1.SetLevelRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSetLevelMethod(), getCallOptions(), request);
     }
@@ -1076,7 +1076,7 @@ public final class ServerServiceGrpc {
      * Request resources/updated notifications for a resource.
      * </pre>
      */
-    public com.google.protobuf.Empty subscribe(org.mcp.client.resources.SubscribeRequest request) {
+    public com.google.protobuf.Empty subscribe(com.mcp.client.v1.SubscribeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSubscribeMethod(), getCallOptions(), request);
     }
@@ -1086,7 +1086,7 @@ public final class ServerServiceGrpc {
      * Request cancellation of resources/updated notifications.
      * </pre>
      */
-    public com.google.protobuf.Empty unsubscribe(org.mcp.client.resources.UnsubscribeRequest request) {
+    public com.google.protobuf.Empty unsubscribe(com.mcp.client.v1.UnsubscribeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUnsubscribeMethod(), getCallOptions(), request);
     }
@@ -1116,8 +1116,8 @@ public final class ServerServiceGrpc {
      * Invoke a tool by name.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<org.mcp.server.resources.CallToolResult> callTool(
-        org.mcp.client.resources.CallToolRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.mcp.server.v1.CallToolResult> callTool(
+        com.mcp.client.v1.CallToolRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCallToolMethod(), getCallOptions()), request);
     }
@@ -1127,8 +1127,8 @@ public final class ServerServiceGrpc {
      * Ask for completion options.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<org.mcp.server.resources.CompleteResult> complete(
-        org.mcp.client.resources.CompleteRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.mcp.server.v1.CompleteResult> complete(
+        com.mcp.client.v1.CompleteRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCompleteMethod(), getCallOptions()), request);
     }
@@ -1138,8 +1138,8 @@ public final class ServerServiceGrpc {
      * Retrieve a single prompt by name.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<org.mcp.server.resources.GetPromptResult> getPrompt(
-        org.mcp.client.resources.GetPromptRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.mcp.server.v1.GetPromptResult> getPrompt(
+        com.mcp.client.v1.GetPromptRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetPromptMethod(), getCallOptions()), request);
     }
@@ -1149,8 +1149,8 @@ public final class ServerServiceGrpc {
      * Initiate the connection with the server.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<org.mcp.server.resources.InitializeResult> initialize(
-        org.mcp.client.resources.InitializeRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.mcp.server.v1.InitializeResult> initialize(
+        com.mcp.client.v1.InitializeRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getInitializeMethod(), getCallOptions()), request);
     }
@@ -1160,8 +1160,8 @@ public final class ServerServiceGrpc {
      * List available prompts.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<org.mcp.server.resources.ListPromptsResult> listPrompts(
-        org.mcp.client.resources.ListPromptsRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.mcp.server.v1.ListPromptsResult> listPrompts(
+        com.mcp.client.v1.ListPromptsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListPromptsMethod(), getCallOptions()), request);
     }
@@ -1171,8 +1171,8 @@ public final class ServerServiceGrpc {
      * List available resources.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<org.mcp.server.resources.ListResourcesResult> listResources(
-        org.mcp.client.resources.ListResourcesRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.mcp.server.v1.ListResourcesResult> listResources(
+        com.mcp.client.v1.ListResourcesRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListResourcesMethod(), getCallOptions()), request);
     }
@@ -1182,8 +1182,8 @@ public final class ServerServiceGrpc {
      * List available resource templates.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<org.mcp.server.resources.ListResourceTemplatesResult> listResourceTemplates(
-        org.mcp.client.resources.ListResourceTemplatesRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.mcp.server.v1.ListResourceTemplatesResult> listResourceTemplates(
+        com.mcp.client.v1.ListResourceTemplatesRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListResourceTemplatesMethod(), getCallOptions()), request);
     }
@@ -1193,8 +1193,8 @@ public final class ServerServiceGrpc {
      * List available tools.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<org.mcp.server.resources.ListToolsResult> listTools(
-        org.mcp.client.resources.ListToolsRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.mcp.server.v1.ListToolsResult> listTools(
+        com.mcp.client.v1.ListToolsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListToolsMethod(), getCallOptions()), request);
     }
@@ -1205,7 +1205,7 @@ public final class ServerServiceGrpc {
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> ping(
-        org.mcp.client.resources.PingRequest request) {
+        com.mcp.client.v1.PingRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getPingMethod(), getCallOptions()), request);
     }
@@ -1215,8 +1215,8 @@ public final class ServerServiceGrpc {
      * Read a specific resource by URI.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<org.mcp.server.resources.ReadResourceResult> readResource(
-        org.mcp.client.resources.ReadResourceRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.mcp.server.v1.ReadResourceResult> readResource(
+        com.mcp.client.v1.ReadResourceRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getReadResourceMethod(), getCallOptions()), request);
     }
@@ -1227,7 +1227,7 @@ public final class ServerServiceGrpc {
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> setLevel(
-        org.mcp.client.resources.SetLevelRequest request) {
+        com.mcp.client.v1.SetLevelRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSetLevelMethod(), getCallOptions()), request);
     }
@@ -1238,7 +1238,7 @@ public final class ServerServiceGrpc {
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> subscribe(
-        org.mcp.client.resources.SubscribeRequest request) {
+        com.mcp.client.v1.SubscribeRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSubscribeMethod(), getCallOptions()), request);
     }
@@ -1249,7 +1249,7 @@ public final class ServerServiceGrpc {
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> unsubscribe(
-        org.mcp.client.resources.UnsubscribeRequest request) {
+        com.mcp.client.v1.UnsubscribeRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUnsubscribeMethod(), getCallOptions()), request);
     }
@@ -1287,55 +1287,55 @@ public final class ServerServiceGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_CALL_TOOL:
-          serviceImpl.callTool((org.mcp.client.resources.CallToolRequest) request,
-              (io.grpc.stub.StreamObserver<org.mcp.server.resources.CallToolResult>) responseObserver);
+          serviceImpl.callTool((com.mcp.client.v1.CallToolRequest) request,
+              (io.grpc.stub.StreamObserver<com.mcp.server.v1.CallToolResult>) responseObserver);
           break;
         case METHODID_COMPLETE:
-          serviceImpl.complete((org.mcp.client.resources.CompleteRequest) request,
-              (io.grpc.stub.StreamObserver<org.mcp.server.resources.CompleteResult>) responseObserver);
+          serviceImpl.complete((com.mcp.client.v1.CompleteRequest) request,
+              (io.grpc.stub.StreamObserver<com.mcp.server.v1.CompleteResult>) responseObserver);
           break;
         case METHODID_GET_PROMPT:
-          serviceImpl.getPrompt((org.mcp.client.resources.GetPromptRequest) request,
-              (io.grpc.stub.StreamObserver<org.mcp.server.resources.GetPromptResult>) responseObserver);
+          serviceImpl.getPrompt((com.mcp.client.v1.GetPromptRequest) request,
+              (io.grpc.stub.StreamObserver<com.mcp.server.v1.GetPromptResult>) responseObserver);
           break;
         case METHODID_INITIALIZE:
-          serviceImpl.initialize((org.mcp.client.resources.InitializeRequest) request,
-              (io.grpc.stub.StreamObserver<org.mcp.server.resources.InitializeResult>) responseObserver);
+          serviceImpl.initialize((com.mcp.client.v1.InitializeRequest) request,
+              (io.grpc.stub.StreamObserver<com.mcp.server.v1.InitializeResult>) responseObserver);
           break;
         case METHODID_LIST_PROMPTS:
-          serviceImpl.listPrompts((org.mcp.client.resources.ListPromptsRequest) request,
-              (io.grpc.stub.StreamObserver<org.mcp.server.resources.ListPromptsResult>) responseObserver);
+          serviceImpl.listPrompts((com.mcp.client.v1.ListPromptsRequest) request,
+              (io.grpc.stub.StreamObserver<com.mcp.server.v1.ListPromptsResult>) responseObserver);
           break;
         case METHODID_LIST_RESOURCES:
-          serviceImpl.listResources((org.mcp.client.resources.ListResourcesRequest) request,
-              (io.grpc.stub.StreamObserver<org.mcp.server.resources.ListResourcesResult>) responseObserver);
+          serviceImpl.listResources((com.mcp.client.v1.ListResourcesRequest) request,
+              (io.grpc.stub.StreamObserver<com.mcp.server.v1.ListResourcesResult>) responseObserver);
           break;
         case METHODID_LIST_RESOURCE_TEMPLATES:
-          serviceImpl.listResourceTemplates((org.mcp.client.resources.ListResourceTemplatesRequest) request,
-              (io.grpc.stub.StreamObserver<org.mcp.server.resources.ListResourceTemplatesResult>) responseObserver);
+          serviceImpl.listResourceTemplates((com.mcp.client.v1.ListResourceTemplatesRequest) request,
+              (io.grpc.stub.StreamObserver<com.mcp.server.v1.ListResourceTemplatesResult>) responseObserver);
           break;
         case METHODID_LIST_TOOLS:
-          serviceImpl.listTools((org.mcp.client.resources.ListToolsRequest) request,
-              (io.grpc.stub.StreamObserver<org.mcp.server.resources.ListToolsResult>) responseObserver);
+          serviceImpl.listTools((com.mcp.client.v1.ListToolsRequest) request,
+              (io.grpc.stub.StreamObserver<com.mcp.server.v1.ListToolsResult>) responseObserver);
           break;
         case METHODID_PING:
-          serviceImpl.ping((org.mcp.client.resources.PingRequest) request,
+          serviceImpl.ping((com.mcp.client.v1.PingRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_READ_RESOURCE:
-          serviceImpl.readResource((org.mcp.client.resources.ReadResourceRequest) request,
-              (io.grpc.stub.StreamObserver<org.mcp.server.resources.ReadResourceResult>) responseObserver);
+          serviceImpl.readResource((com.mcp.client.v1.ReadResourceRequest) request,
+              (io.grpc.stub.StreamObserver<com.mcp.server.v1.ReadResourceResult>) responseObserver);
           break;
         case METHODID_SET_LEVEL:
-          serviceImpl.setLevel((org.mcp.client.resources.SetLevelRequest) request,
+          serviceImpl.setLevel((com.mcp.client.v1.SetLevelRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_SUBSCRIBE:
-          serviceImpl.subscribe((org.mcp.client.resources.SubscribeRequest) request,
+          serviceImpl.subscribe((com.mcp.client.v1.SubscribeRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_UNSUBSCRIBE:
-          serviceImpl.unsubscribe((org.mcp.client.resources.UnsubscribeRequest) request,
+          serviceImpl.unsubscribe((com.mcp.client.v1.UnsubscribeRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         default:
@@ -1360,91 +1360,91 @@ public final class ServerServiceGrpc {
           getCallToolMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              org.mcp.client.resources.CallToolRequest,
-              org.mcp.server.resources.CallToolResult>(
+              com.mcp.client.v1.CallToolRequest,
+              com.mcp.server.v1.CallToolResult>(
                 service, METHODID_CALL_TOOL)))
         .addMethod(
           getCompleteMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              org.mcp.client.resources.CompleteRequest,
-              org.mcp.server.resources.CompleteResult>(
+              com.mcp.client.v1.CompleteRequest,
+              com.mcp.server.v1.CompleteResult>(
                 service, METHODID_COMPLETE)))
         .addMethod(
           getGetPromptMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              org.mcp.client.resources.GetPromptRequest,
-              org.mcp.server.resources.GetPromptResult>(
+              com.mcp.client.v1.GetPromptRequest,
+              com.mcp.server.v1.GetPromptResult>(
                 service, METHODID_GET_PROMPT)))
         .addMethod(
           getInitializeMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              org.mcp.client.resources.InitializeRequest,
-              org.mcp.server.resources.InitializeResult>(
+              com.mcp.client.v1.InitializeRequest,
+              com.mcp.server.v1.InitializeResult>(
                 service, METHODID_INITIALIZE)))
         .addMethod(
           getListPromptsMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              org.mcp.client.resources.ListPromptsRequest,
-              org.mcp.server.resources.ListPromptsResult>(
+              com.mcp.client.v1.ListPromptsRequest,
+              com.mcp.server.v1.ListPromptsResult>(
                 service, METHODID_LIST_PROMPTS)))
         .addMethod(
           getListResourcesMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              org.mcp.client.resources.ListResourcesRequest,
-              org.mcp.server.resources.ListResourcesResult>(
+              com.mcp.client.v1.ListResourcesRequest,
+              com.mcp.server.v1.ListResourcesResult>(
                 service, METHODID_LIST_RESOURCES)))
         .addMethod(
           getListResourceTemplatesMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              org.mcp.client.resources.ListResourceTemplatesRequest,
-              org.mcp.server.resources.ListResourceTemplatesResult>(
+              com.mcp.client.v1.ListResourceTemplatesRequest,
+              com.mcp.server.v1.ListResourceTemplatesResult>(
                 service, METHODID_LIST_RESOURCE_TEMPLATES)))
         .addMethod(
           getListToolsMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              org.mcp.client.resources.ListToolsRequest,
-              org.mcp.server.resources.ListToolsResult>(
+              com.mcp.client.v1.ListToolsRequest,
+              com.mcp.server.v1.ListToolsResult>(
                 service, METHODID_LIST_TOOLS)))
         .addMethod(
           getPingMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              org.mcp.client.resources.PingRequest,
+              com.mcp.client.v1.PingRequest,
               com.google.protobuf.Empty>(
                 service, METHODID_PING)))
         .addMethod(
           getReadResourceMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              org.mcp.client.resources.ReadResourceRequest,
-              org.mcp.server.resources.ReadResourceResult>(
+              com.mcp.client.v1.ReadResourceRequest,
+              com.mcp.server.v1.ReadResourceResult>(
                 service, METHODID_READ_RESOURCE)))
         .addMethod(
           getSetLevelMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              org.mcp.client.resources.SetLevelRequest,
+              com.mcp.client.v1.SetLevelRequest,
               com.google.protobuf.Empty>(
                 service, METHODID_SET_LEVEL)))
         .addMethod(
           getSubscribeMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              org.mcp.client.resources.SubscribeRequest,
+              com.mcp.client.v1.SubscribeRequest,
               com.google.protobuf.Empty>(
                 service, METHODID_SUBSCRIBE)))
         .addMethod(
           getUnsubscribeMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              org.mcp.client.resources.UnsubscribeRequest,
+              com.mcp.client.v1.UnsubscribeRequest,
               com.google.protobuf.Empty>(
                 service, METHODID_UNSUBSCRIBE)))
         .build();

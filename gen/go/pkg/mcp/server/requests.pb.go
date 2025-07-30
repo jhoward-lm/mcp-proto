@@ -1637,8 +1637,8 @@ const file_mcp_server_v1_requests_proto_rawDesc = "" +
 	"min_length\x18\x04 \x01(\x05R\tminLength\x12\x1d\n" +
 	"\n" +
 	"max_length\x18\x05 \x01(\x05R\tmaxLength\x12\x16\n" +
-	"\x06format\x18\x06 \x01(\tR\x06formatB\x91\x01\n" +
-	"\x18org.mcp.server.resourcesB\rRequestsProtoH\x01P\x01Z\x0epkg/mcp/server\xa2\x02\x03MSX\xaa\x02\rMcp.Server.V1\xca\x02\rMcp\\Server\\V1\xe2\x02\x19Mcp\\Server\\V1\\GPBMetadata\xea\x02\x0fMcp::Server::V1b\beditionsp\xe8\a"
+	"\x06format\x18\x06 \x01(\tR\x06formatB\x8d\x01\n" +
+	"\x14org.mcp.server.modelB\rRequestsProtoH\x01P\x01Z\x0epkg/mcp/server\xa2\x02\x03MSX\xaa\x02\rMcp.Server.V1\xca\x02\rMcp\\Server\\V1\xe2\x02\x19Mcp\\Server\\V1\\GPBMetadata\xea\x02\x0fMcp::Server::V1b\beditionsp\xe8\a"
 
 var (
 	file_mcp_server_v1_requests_proto_rawDescOnce sync.Once

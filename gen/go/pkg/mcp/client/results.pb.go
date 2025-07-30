@@ -402,8 +402,8 @@ const file_mcp_client_v1_results_proto_rawDesc = "" +
 	"\x04Root\x12\x10\n" +
 	"\x03uri\x18\x01 \x01(\tR\x03uri\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12,\n" +
-	"\x05_meta\x18\x03 \x01(\v2\x17.google.protobuf.StructR\x04MetaB\x90\x01\n" +
-	"\x18org.mcp.client.resourcesB\fResultsProtoH\x01P\x01Z\x0epkg/mcp/client\xa2\x02\x03MCX\xaa\x02\rMcp.Client.V1\xca\x02\rMcp\\Client\\V1\xe2\x02\x19Mcp\\Client\\V1\\GPBMetadata\xea\x02\x0fMcp::Client::V1b\beditionsp\xe8\a"
+	"\x05_meta\x18\x03 \x01(\v2\x17.google.protobuf.StructR\x04MetaB\x8c\x01\n" +
+	"\x14org.mcp.client.modelB\fResultsProtoH\x01P\x01Z\x0epkg/mcp/client\xa2\x02\x03MCX\xaa\x02\rMcp.Client.V1\xca\x02\rMcp\\Client\\V1\xe2\x02\x19Mcp\\Client\\V1\\GPBMetadata\xea\x02\x0fMcp::Client::V1b\beditionsp\xe8\a"
 
 var (
 	file_mcp_client_v1_results_proto_rawDescOnce sync.Once

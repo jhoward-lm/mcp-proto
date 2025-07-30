@@ -15,29 +15,29 @@ public final class ClientServiceGrpc {
   public static final java.lang.String SERVICE_NAME = "mcp.api.v1.ClientService";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<org.mcp.server.resources.ElicitRequest,
-      org.mcp.client.resources.ElicitResult> getCreateElicitationMethod;
+  private static volatile io.grpc.MethodDescriptor<com.mcp.server.v1.ElicitRequest,
+      com.mcp.client.v1.ElicitResult> getCreateElicitationMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "CreateElicitation",
-      requestType = org.mcp.server.resources.ElicitRequest.class,
-      responseType = org.mcp.client.resources.ElicitResult.class,
+      requestType = com.mcp.server.v1.ElicitRequest.class,
+      responseType = com.mcp.client.v1.ElicitResult.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<org.mcp.server.resources.ElicitRequest,
-      org.mcp.client.resources.ElicitResult> getCreateElicitationMethod() {
-    io.grpc.MethodDescriptor<org.mcp.server.resources.ElicitRequest, org.mcp.client.resources.ElicitResult> getCreateElicitationMethod;
+  public static io.grpc.MethodDescriptor<com.mcp.server.v1.ElicitRequest,
+      com.mcp.client.v1.ElicitResult> getCreateElicitationMethod() {
+    io.grpc.MethodDescriptor<com.mcp.server.v1.ElicitRequest, com.mcp.client.v1.ElicitResult> getCreateElicitationMethod;
     if ((getCreateElicitationMethod = ClientServiceGrpc.getCreateElicitationMethod) == null) {
       synchronized (ClientServiceGrpc.class) {
         if ((getCreateElicitationMethod = ClientServiceGrpc.getCreateElicitationMethod) == null) {
           ClientServiceGrpc.getCreateElicitationMethod = getCreateElicitationMethod =
-              io.grpc.MethodDescriptor.<org.mcp.server.resources.ElicitRequest, org.mcp.client.resources.ElicitResult>newBuilder()
+              io.grpc.MethodDescriptor.<com.mcp.server.v1.ElicitRequest, com.mcp.client.v1.ElicitResult>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateElicitation"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.mcp.server.resources.ElicitRequest.getDefaultInstance()))
+                  com.mcp.server.v1.ElicitRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.mcp.client.resources.ElicitResult.getDefaultInstance()))
+                  com.mcp.client.v1.ElicitResult.getDefaultInstance()))
               .setSchemaDescriptor(new ClientServiceMethodDescriptorSupplier("CreateElicitation"))
               .build();
         }
@@ -46,29 +46,29 @@ public final class ClientServiceGrpc {
     return getCreateElicitationMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<org.mcp.server.resources.CreateMessageRequest,
-      org.mcp.client.resources.CreateMessageResult> getCreateMessageMethod;
+  private static volatile io.grpc.MethodDescriptor<com.mcp.server.v1.CreateMessageRequest,
+      com.mcp.client.v1.CreateMessageResult> getCreateMessageMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "CreateMessage",
-      requestType = org.mcp.server.resources.CreateMessageRequest.class,
-      responseType = org.mcp.client.resources.CreateMessageResult.class,
+      requestType = com.mcp.server.v1.CreateMessageRequest.class,
+      responseType = com.mcp.client.v1.CreateMessageResult.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<org.mcp.server.resources.CreateMessageRequest,
-      org.mcp.client.resources.CreateMessageResult> getCreateMessageMethod() {
-    io.grpc.MethodDescriptor<org.mcp.server.resources.CreateMessageRequest, org.mcp.client.resources.CreateMessageResult> getCreateMessageMethod;
+  public static io.grpc.MethodDescriptor<com.mcp.server.v1.CreateMessageRequest,
+      com.mcp.client.v1.CreateMessageResult> getCreateMessageMethod() {
+    io.grpc.MethodDescriptor<com.mcp.server.v1.CreateMessageRequest, com.mcp.client.v1.CreateMessageResult> getCreateMessageMethod;
     if ((getCreateMessageMethod = ClientServiceGrpc.getCreateMessageMethod) == null) {
       synchronized (ClientServiceGrpc.class) {
         if ((getCreateMessageMethod = ClientServiceGrpc.getCreateMessageMethod) == null) {
           ClientServiceGrpc.getCreateMessageMethod = getCreateMessageMethod =
-              io.grpc.MethodDescriptor.<org.mcp.server.resources.CreateMessageRequest, org.mcp.client.resources.CreateMessageResult>newBuilder()
+              io.grpc.MethodDescriptor.<com.mcp.server.v1.CreateMessageRequest, com.mcp.client.v1.CreateMessageResult>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateMessage"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.mcp.server.resources.CreateMessageRequest.getDefaultInstance()))
+                  com.mcp.server.v1.CreateMessageRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.mcp.client.resources.CreateMessageResult.getDefaultInstance()))
+                  com.mcp.client.v1.CreateMessageResult.getDefaultInstance()))
               .setSchemaDescriptor(new ClientServiceMethodDescriptorSupplier("CreateMessage"))
               .build();
         }
@@ -77,29 +77,29 @@ public final class ClientServiceGrpc {
     return getCreateMessageMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<org.mcp.server.resources.ListRootsRequest,
-      org.mcp.client.resources.ListRootsResult> getListRootsMethod;
+  private static volatile io.grpc.MethodDescriptor<com.mcp.server.v1.ListRootsRequest,
+      com.mcp.client.v1.ListRootsResult> getListRootsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "ListRoots",
-      requestType = org.mcp.server.resources.ListRootsRequest.class,
-      responseType = org.mcp.client.resources.ListRootsResult.class,
+      requestType = com.mcp.server.v1.ListRootsRequest.class,
+      responseType = com.mcp.client.v1.ListRootsResult.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<org.mcp.server.resources.ListRootsRequest,
-      org.mcp.client.resources.ListRootsResult> getListRootsMethod() {
-    io.grpc.MethodDescriptor<org.mcp.server.resources.ListRootsRequest, org.mcp.client.resources.ListRootsResult> getListRootsMethod;
+  public static io.grpc.MethodDescriptor<com.mcp.server.v1.ListRootsRequest,
+      com.mcp.client.v1.ListRootsResult> getListRootsMethod() {
+    io.grpc.MethodDescriptor<com.mcp.server.v1.ListRootsRequest, com.mcp.client.v1.ListRootsResult> getListRootsMethod;
     if ((getListRootsMethod = ClientServiceGrpc.getListRootsMethod) == null) {
       synchronized (ClientServiceGrpc.class) {
         if ((getListRootsMethod = ClientServiceGrpc.getListRootsMethod) == null) {
           ClientServiceGrpc.getListRootsMethod = getListRootsMethod =
-              io.grpc.MethodDescriptor.<org.mcp.server.resources.ListRootsRequest, org.mcp.client.resources.ListRootsResult>newBuilder()
+              io.grpc.MethodDescriptor.<com.mcp.server.v1.ListRootsRequest, com.mcp.client.v1.ListRootsResult>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListRoots"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.mcp.server.resources.ListRootsRequest.getDefaultInstance()))
+                  com.mcp.server.v1.ListRootsRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.mcp.client.resources.ListRootsResult.getDefaultInstance()))
+                  com.mcp.client.v1.ListRootsResult.getDefaultInstance()))
               .setSchemaDescriptor(new ClientServiceMethodDescriptorSupplier("ListRoots"))
               .build();
         }
@@ -108,27 +108,27 @@ public final class ClientServiceGrpc {
     return getListRootsMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<org.mcp.server.resources.PingRequest,
+  private static volatile io.grpc.MethodDescriptor<com.mcp.server.v1.PingRequest,
       com.google.protobuf.Empty> getPingMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "Ping",
-      requestType = org.mcp.server.resources.PingRequest.class,
+      requestType = com.mcp.server.v1.PingRequest.class,
       responseType = com.google.protobuf.Empty.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<org.mcp.server.resources.PingRequest,
+  public static io.grpc.MethodDescriptor<com.mcp.server.v1.PingRequest,
       com.google.protobuf.Empty> getPingMethod() {
-    io.grpc.MethodDescriptor<org.mcp.server.resources.PingRequest, com.google.protobuf.Empty> getPingMethod;
+    io.grpc.MethodDescriptor<com.mcp.server.v1.PingRequest, com.google.protobuf.Empty> getPingMethod;
     if ((getPingMethod = ClientServiceGrpc.getPingMethod) == null) {
       synchronized (ClientServiceGrpc.class) {
         if ((getPingMethod = ClientServiceGrpc.getPingMethod) == null) {
           ClientServiceGrpc.getPingMethod = getPingMethod =
-              io.grpc.MethodDescriptor.<org.mcp.server.resources.PingRequest, com.google.protobuf.Empty>newBuilder()
+              io.grpc.MethodDescriptor.<com.mcp.server.v1.PingRequest, com.google.protobuf.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Ping"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.mcp.server.resources.PingRequest.getDefaultInstance()))
+                  com.mcp.server.v1.PingRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.google.protobuf.Empty.getDefaultInstance()))
               .setSchemaDescriptor(new ClientServiceMethodDescriptorSupplier("Ping"))
@@ -210,8 +210,8 @@ public final class ClientServiceGrpc {
      * Elicit additional information from the user.
      * </pre>
      */
-    default void createElicitation(org.mcp.server.resources.ElicitRequest request,
-        io.grpc.stub.StreamObserver<org.mcp.client.resources.ElicitResult> responseObserver) {
+    default void createElicitation(com.mcp.server.v1.ElicitRequest request,
+        io.grpc.stub.StreamObserver<com.mcp.client.v1.ElicitResult> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateElicitationMethod(), responseObserver);
     }
 
@@ -220,8 +220,8 @@ public final class ClientServiceGrpc {
      * Instruct the client to sample an LLM and return its message.
      * </pre>
      */
-    default void createMessage(org.mcp.server.resources.CreateMessageRequest request,
-        io.grpc.stub.StreamObserver<org.mcp.client.resources.CreateMessageResult> responseObserver) {
+    default void createMessage(com.mcp.server.v1.CreateMessageRequest request,
+        io.grpc.stub.StreamObserver<com.mcp.client.v1.CreateMessageResult> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateMessageMethod(), responseObserver);
     }
 
@@ -230,8 +230,8 @@ public final class ClientServiceGrpc {
      * Request the client to list roots.
      * </pre>
      */
-    default void listRoots(org.mcp.server.resources.ListRootsRequest request,
-        io.grpc.stub.StreamObserver<org.mcp.client.resources.ListRootsResult> responseObserver) {
+    default void listRoots(com.mcp.server.v1.ListRootsRequest request,
+        io.grpc.stub.StreamObserver<com.mcp.client.v1.ListRootsResult> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListRootsMethod(), responseObserver);
     }
 
@@ -240,7 +240,7 @@ public final class ClientServiceGrpc {
      * Ping the other party to check if it is still alive.
      * </pre>
      */
-    default void ping(org.mcp.server.resources.PingRequest request,
+    default void ping(com.mcp.server.v1.PingRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPingMethod(), responseObserver);
     }
@@ -284,8 +284,8 @@ public final class ClientServiceGrpc {
      * Elicit additional information from the user.
      * </pre>
      */
-    public void createElicitation(org.mcp.server.resources.ElicitRequest request,
-        io.grpc.stub.StreamObserver<org.mcp.client.resources.ElicitResult> responseObserver) {
+    public void createElicitation(com.mcp.server.v1.ElicitRequest request,
+        io.grpc.stub.StreamObserver<com.mcp.client.v1.ElicitResult> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateElicitationMethod(), getCallOptions()), request, responseObserver);
     }
@@ -295,8 +295,8 @@ public final class ClientServiceGrpc {
      * Instruct the client to sample an LLM and return its message.
      * </pre>
      */
-    public void createMessage(org.mcp.server.resources.CreateMessageRequest request,
-        io.grpc.stub.StreamObserver<org.mcp.client.resources.CreateMessageResult> responseObserver) {
+    public void createMessage(com.mcp.server.v1.CreateMessageRequest request,
+        io.grpc.stub.StreamObserver<com.mcp.client.v1.CreateMessageResult> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateMessageMethod(), getCallOptions()), request, responseObserver);
     }
@@ -306,8 +306,8 @@ public final class ClientServiceGrpc {
      * Request the client to list roots.
      * </pre>
      */
-    public void listRoots(org.mcp.server.resources.ListRootsRequest request,
-        io.grpc.stub.StreamObserver<org.mcp.client.resources.ListRootsResult> responseObserver) {
+    public void listRoots(com.mcp.server.v1.ListRootsRequest request,
+        io.grpc.stub.StreamObserver<com.mcp.client.v1.ListRootsResult> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListRootsMethod(), getCallOptions()), request, responseObserver);
     }
@@ -317,7 +317,7 @@ public final class ClientServiceGrpc {
      * Ping the other party to check if it is still alive.
      * </pre>
      */
-    public void ping(org.mcp.server.resources.PingRequest request,
+    public void ping(com.mcp.server.v1.PingRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getPingMethod(), getCallOptions()), request, responseObserver);
@@ -348,7 +348,7 @@ public final class ClientServiceGrpc {
      * Elicit additional information from the user.
      * </pre>
      */
-    public org.mcp.client.resources.ElicitResult createElicitation(org.mcp.server.resources.ElicitRequest request) throws io.grpc.StatusException {
+    public com.mcp.client.v1.ElicitResult createElicitation(com.mcp.server.v1.ElicitRequest request) throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateElicitationMethod(), getCallOptions(), request);
     }
@@ -358,7 +358,7 @@ public final class ClientServiceGrpc {
      * Instruct the client to sample an LLM and return its message.
      * </pre>
      */
-    public org.mcp.client.resources.CreateMessageResult createMessage(org.mcp.server.resources.CreateMessageRequest request) throws io.grpc.StatusException {
+    public com.mcp.client.v1.CreateMessageResult createMessage(com.mcp.server.v1.CreateMessageRequest request) throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateMessageMethod(), getCallOptions(), request);
     }
@@ -368,7 +368,7 @@ public final class ClientServiceGrpc {
      * Request the client to list roots.
      * </pre>
      */
-    public org.mcp.client.resources.ListRootsResult listRoots(org.mcp.server.resources.ListRootsRequest request) throws io.grpc.StatusException {
+    public com.mcp.client.v1.ListRootsResult listRoots(com.mcp.server.v1.ListRootsRequest request) throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListRootsMethod(), getCallOptions(), request);
     }
@@ -378,7 +378,7 @@ public final class ClientServiceGrpc {
      * Ping the other party to check if it is still alive.
      * </pre>
      */
-    public com.google.protobuf.Empty ping(org.mcp.server.resources.PingRequest request) throws io.grpc.StatusException {
+    public com.google.protobuf.Empty ping(com.mcp.server.v1.PingRequest request) throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getPingMethod(), getCallOptions(), request);
     }
@@ -408,7 +408,7 @@ public final class ClientServiceGrpc {
      * Elicit additional information from the user.
      * </pre>
      */
-    public org.mcp.client.resources.ElicitResult createElicitation(org.mcp.server.resources.ElicitRequest request) {
+    public com.mcp.client.v1.ElicitResult createElicitation(com.mcp.server.v1.ElicitRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateElicitationMethod(), getCallOptions(), request);
     }
@@ -418,7 +418,7 @@ public final class ClientServiceGrpc {
      * Instruct the client to sample an LLM and return its message.
      * </pre>
      */
-    public org.mcp.client.resources.CreateMessageResult createMessage(org.mcp.server.resources.CreateMessageRequest request) {
+    public com.mcp.client.v1.CreateMessageResult createMessage(com.mcp.server.v1.CreateMessageRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateMessageMethod(), getCallOptions(), request);
     }
@@ -428,7 +428,7 @@ public final class ClientServiceGrpc {
      * Request the client to list roots.
      * </pre>
      */
-    public org.mcp.client.resources.ListRootsResult listRoots(org.mcp.server.resources.ListRootsRequest request) {
+    public com.mcp.client.v1.ListRootsResult listRoots(com.mcp.server.v1.ListRootsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListRootsMethod(), getCallOptions(), request);
     }
@@ -438,7 +438,7 @@ public final class ClientServiceGrpc {
      * Ping the other party to check if it is still alive.
      * </pre>
      */
-    public com.google.protobuf.Empty ping(org.mcp.server.resources.PingRequest request) {
+    public com.google.protobuf.Empty ping(com.mcp.server.v1.PingRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getPingMethod(), getCallOptions(), request);
     }
@@ -468,8 +468,8 @@ public final class ClientServiceGrpc {
      * Elicit additional information from the user.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<org.mcp.client.resources.ElicitResult> createElicitation(
-        org.mcp.server.resources.ElicitRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.mcp.client.v1.ElicitResult> createElicitation(
+        com.mcp.server.v1.ElicitRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateElicitationMethod(), getCallOptions()), request);
     }
@@ -479,8 +479,8 @@ public final class ClientServiceGrpc {
      * Instruct the client to sample an LLM and return its message.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<org.mcp.client.resources.CreateMessageResult> createMessage(
-        org.mcp.server.resources.CreateMessageRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.mcp.client.v1.CreateMessageResult> createMessage(
+        com.mcp.server.v1.CreateMessageRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateMessageMethod(), getCallOptions()), request);
     }
@@ -490,8 +490,8 @@ public final class ClientServiceGrpc {
      * Request the client to list roots.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<org.mcp.client.resources.ListRootsResult> listRoots(
-        org.mcp.server.resources.ListRootsRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.mcp.client.v1.ListRootsResult> listRoots(
+        com.mcp.server.v1.ListRootsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListRootsMethod(), getCallOptions()), request);
     }
@@ -502,7 +502,7 @@ public final class ClientServiceGrpc {
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> ping(
-        org.mcp.server.resources.PingRequest request) {
+        com.mcp.server.v1.PingRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getPingMethod(), getCallOptions()), request);
     }
@@ -531,19 +531,19 @@ public final class ClientServiceGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_CREATE_ELICITATION:
-          serviceImpl.createElicitation((org.mcp.server.resources.ElicitRequest) request,
-              (io.grpc.stub.StreamObserver<org.mcp.client.resources.ElicitResult>) responseObserver);
+          serviceImpl.createElicitation((com.mcp.server.v1.ElicitRequest) request,
+              (io.grpc.stub.StreamObserver<com.mcp.client.v1.ElicitResult>) responseObserver);
           break;
         case METHODID_CREATE_MESSAGE:
-          serviceImpl.createMessage((org.mcp.server.resources.CreateMessageRequest) request,
-              (io.grpc.stub.StreamObserver<org.mcp.client.resources.CreateMessageResult>) responseObserver);
+          serviceImpl.createMessage((com.mcp.server.v1.CreateMessageRequest) request,
+              (io.grpc.stub.StreamObserver<com.mcp.client.v1.CreateMessageResult>) responseObserver);
           break;
         case METHODID_LIST_ROOTS:
-          serviceImpl.listRoots((org.mcp.server.resources.ListRootsRequest) request,
-              (io.grpc.stub.StreamObserver<org.mcp.client.resources.ListRootsResult>) responseObserver);
+          serviceImpl.listRoots((com.mcp.server.v1.ListRootsRequest) request,
+              (io.grpc.stub.StreamObserver<com.mcp.client.v1.ListRootsResult>) responseObserver);
           break;
         case METHODID_PING:
-          serviceImpl.ping((org.mcp.server.resources.PingRequest) request,
+          serviceImpl.ping((com.mcp.server.v1.PingRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         default:
@@ -568,28 +568,28 @@ public final class ClientServiceGrpc {
           getCreateElicitationMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              org.mcp.server.resources.ElicitRequest,
-              org.mcp.client.resources.ElicitResult>(
+              com.mcp.server.v1.ElicitRequest,
+              com.mcp.client.v1.ElicitResult>(
                 service, METHODID_CREATE_ELICITATION)))
         .addMethod(
           getCreateMessageMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              org.mcp.server.resources.CreateMessageRequest,
-              org.mcp.client.resources.CreateMessageResult>(
+              com.mcp.server.v1.CreateMessageRequest,
+              com.mcp.client.v1.CreateMessageResult>(
                 service, METHODID_CREATE_MESSAGE)))
         .addMethod(
           getListRootsMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              org.mcp.server.resources.ListRootsRequest,
-              org.mcp.client.resources.ListRootsResult>(
+              com.mcp.server.v1.ListRootsRequest,
+              com.mcp.client.v1.ListRootsResult>(
                 service, METHODID_LIST_ROOTS)))
         .addMethod(
           getPingMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              org.mcp.server.resources.PingRequest,
+              com.mcp.server.v1.PingRequest,
               com.google.protobuf.Empty>(
                 service, METHODID_PING)))
         .build();

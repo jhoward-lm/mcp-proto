@@ -15,27 +15,27 @@ public final class ServerNotificationServiceGrpc {
   public static final java.lang.String SERVICE_NAME = "mcp.api.v1.ServerNotificationService";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<org.mcp.server.resources.CancelledNotification,
+  private static volatile io.grpc.MethodDescriptor<com.mcp.server.v1.CancelledNotification,
       com.google.protobuf.Empty> getCancelledMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "Cancelled",
-      requestType = org.mcp.server.resources.CancelledNotification.class,
+      requestType = com.mcp.server.v1.CancelledNotification.class,
       responseType = com.google.protobuf.Empty.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<org.mcp.server.resources.CancelledNotification,
+  public static io.grpc.MethodDescriptor<com.mcp.server.v1.CancelledNotification,
       com.google.protobuf.Empty> getCancelledMethod() {
-    io.grpc.MethodDescriptor<org.mcp.server.resources.CancelledNotification, com.google.protobuf.Empty> getCancelledMethod;
+    io.grpc.MethodDescriptor<com.mcp.server.v1.CancelledNotification, com.google.protobuf.Empty> getCancelledMethod;
     if ((getCancelledMethod = ServerNotificationServiceGrpc.getCancelledMethod) == null) {
       synchronized (ServerNotificationServiceGrpc.class) {
         if ((getCancelledMethod = ServerNotificationServiceGrpc.getCancelledMethod) == null) {
           ServerNotificationServiceGrpc.getCancelledMethod = getCancelledMethod =
-              io.grpc.MethodDescriptor.<org.mcp.server.resources.CancelledNotification, com.google.protobuf.Empty>newBuilder()
+              io.grpc.MethodDescriptor.<com.mcp.server.v1.CancelledNotification, com.google.protobuf.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Cancelled"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.mcp.server.resources.CancelledNotification.getDefaultInstance()))
+                  com.mcp.server.v1.CancelledNotification.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.google.protobuf.Empty.getDefaultInstance()))
               .setSchemaDescriptor(new ServerNotificationServiceMethodDescriptorSupplier("Cancelled"))
@@ -46,27 +46,27 @@ public final class ServerNotificationServiceGrpc {
     return getCancelledMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<org.mcp.server.resources.LoggingMessageNotification,
+  private static volatile io.grpc.MethodDescriptor<com.mcp.server.v1.LoggingMessageNotification,
       com.google.protobuf.Empty> getMessageMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "Message",
-      requestType = org.mcp.server.resources.LoggingMessageNotification.class,
+      requestType = com.mcp.server.v1.LoggingMessageNotification.class,
       responseType = com.google.protobuf.Empty.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<org.mcp.server.resources.LoggingMessageNotification,
+  public static io.grpc.MethodDescriptor<com.mcp.server.v1.LoggingMessageNotification,
       com.google.protobuf.Empty> getMessageMethod() {
-    io.grpc.MethodDescriptor<org.mcp.server.resources.LoggingMessageNotification, com.google.protobuf.Empty> getMessageMethod;
+    io.grpc.MethodDescriptor<com.mcp.server.v1.LoggingMessageNotification, com.google.protobuf.Empty> getMessageMethod;
     if ((getMessageMethod = ServerNotificationServiceGrpc.getMessageMethod) == null) {
       synchronized (ServerNotificationServiceGrpc.class) {
         if ((getMessageMethod = ServerNotificationServiceGrpc.getMessageMethod) == null) {
           ServerNotificationServiceGrpc.getMessageMethod = getMessageMethod =
-              io.grpc.MethodDescriptor.<org.mcp.server.resources.LoggingMessageNotification, com.google.protobuf.Empty>newBuilder()
+              io.grpc.MethodDescriptor.<com.mcp.server.v1.LoggingMessageNotification, com.google.protobuf.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Message"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.mcp.server.resources.LoggingMessageNotification.getDefaultInstance()))
+                  com.mcp.server.v1.LoggingMessageNotification.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.google.protobuf.Empty.getDefaultInstance()))
               .setSchemaDescriptor(new ServerNotificationServiceMethodDescriptorSupplier("Message"))
@@ -77,27 +77,27 @@ public final class ServerNotificationServiceGrpc {
     return getMessageMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<org.mcp.server.resources.ProgressNotification,
+  private static volatile io.grpc.MethodDescriptor<com.mcp.server.v1.ProgressNotification,
       com.google.protobuf.Empty> getProgressMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "Progress",
-      requestType = org.mcp.server.resources.ProgressNotification.class,
+      requestType = com.mcp.server.v1.ProgressNotification.class,
       responseType = com.google.protobuf.Empty.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<org.mcp.server.resources.ProgressNotification,
+  public static io.grpc.MethodDescriptor<com.mcp.server.v1.ProgressNotification,
       com.google.protobuf.Empty> getProgressMethod() {
-    io.grpc.MethodDescriptor<org.mcp.server.resources.ProgressNotification, com.google.protobuf.Empty> getProgressMethod;
+    io.grpc.MethodDescriptor<com.mcp.server.v1.ProgressNotification, com.google.protobuf.Empty> getProgressMethod;
     if ((getProgressMethod = ServerNotificationServiceGrpc.getProgressMethod) == null) {
       synchronized (ServerNotificationServiceGrpc.class) {
         if ((getProgressMethod = ServerNotificationServiceGrpc.getProgressMethod) == null) {
           ServerNotificationServiceGrpc.getProgressMethod = getProgressMethod =
-              io.grpc.MethodDescriptor.<org.mcp.server.resources.ProgressNotification, com.google.protobuf.Empty>newBuilder()
+              io.grpc.MethodDescriptor.<com.mcp.server.v1.ProgressNotification, com.google.protobuf.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Progress"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.mcp.server.resources.ProgressNotification.getDefaultInstance()))
+                  com.mcp.server.v1.ProgressNotification.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.google.protobuf.Empty.getDefaultInstance()))
               .setSchemaDescriptor(new ServerNotificationServiceMethodDescriptorSupplier("Progress"))
@@ -108,27 +108,27 @@ public final class ServerNotificationServiceGrpc {
     return getProgressMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<org.mcp.server.resources.PromptListChangedNotification,
+  private static volatile io.grpc.MethodDescriptor<com.mcp.server.v1.PromptListChangedNotification,
       com.google.protobuf.Empty> getPromptListChangedMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "PromptListChanged",
-      requestType = org.mcp.server.resources.PromptListChangedNotification.class,
+      requestType = com.mcp.server.v1.PromptListChangedNotification.class,
       responseType = com.google.protobuf.Empty.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<org.mcp.server.resources.PromptListChangedNotification,
+  public static io.grpc.MethodDescriptor<com.mcp.server.v1.PromptListChangedNotification,
       com.google.protobuf.Empty> getPromptListChangedMethod() {
-    io.grpc.MethodDescriptor<org.mcp.server.resources.PromptListChangedNotification, com.google.protobuf.Empty> getPromptListChangedMethod;
+    io.grpc.MethodDescriptor<com.mcp.server.v1.PromptListChangedNotification, com.google.protobuf.Empty> getPromptListChangedMethod;
     if ((getPromptListChangedMethod = ServerNotificationServiceGrpc.getPromptListChangedMethod) == null) {
       synchronized (ServerNotificationServiceGrpc.class) {
         if ((getPromptListChangedMethod = ServerNotificationServiceGrpc.getPromptListChangedMethod) == null) {
           ServerNotificationServiceGrpc.getPromptListChangedMethod = getPromptListChangedMethod =
-              io.grpc.MethodDescriptor.<org.mcp.server.resources.PromptListChangedNotification, com.google.protobuf.Empty>newBuilder()
+              io.grpc.MethodDescriptor.<com.mcp.server.v1.PromptListChangedNotification, com.google.protobuf.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PromptListChanged"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.mcp.server.resources.PromptListChangedNotification.getDefaultInstance()))
+                  com.mcp.server.v1.PromptListChangedNotification.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.google.protobuf.Empty.getDefaultInstance()))
               .setSchemaDescriptor(new ServerNotificationServiceMethodDescriptorSupplier("PromptListChanged"))
@@ -139,27 +139,27 @@ public final class ServerNotificationServiceGrpc {
     return getPromptListChangedMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<org.mcp.server.resources.ResourceListChangedNotification,
+  private static volatile io.grpc.MethodDescriptor<com.mcp.server.v1.ResourceListChangedNotification,
       com.google.protobuf.Empty> getResourceListChangedMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "ResourceListChanged",
-      requestType = org.mcp.server.resources.ResourceListChangedNotification.class,
+      requestType = com.mcp.server.v1.ResourceListChangedNotification.class,
       responseType = com.google.protobuf.Empty.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<org.mcp.server.resources.ResourceListChangedNotification,
+  public static io.grpc.MethodDescriptor<com.mcp.server.v1.ResourceListChangedNotification,
       com.google.protobuf.Empty> getResourceListChangedMethod() {
-    io.grpc.MethodDescriptor<org.mcp.server.resources.ResourceListChangedNotification, com.google.protobuf.Empty> getResourceListChangedMethod;
+    io.grpc.MethodDescriptor<com.mcp.server.v1.ResourceListChangedNotification, com.google.protobuf.Empty> getResourceListChangedMethod;
     if ((getResourceListChangedMethod = ServerNotificationServiceGrpc.getResourceListChangedMethod) == null) {
       synchronized (ServerNotificationServiceGrpc.class) {
         if ((getResourceListChangedMethod = ServerNotificationServiceGrpc.getResourceListChangedMethod) == null) {
           ServerNotificationServiceGrpc.getResourceListChangedMethod = getResourceListChangedMethod =
-              io.grpc.MethodDescriptor.<org.mcp.server.resources.ResourceListChangedNotification, com.google.protobuf.Empty>newBuilder()
+              io.grpc.MethodDescriptor.<com.mcp.server.v1.ResourceListChangedNotification, com.google.protobuf.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ResourceListChanged"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.mcp.server.resources.ResourceListChangedNotification.getDefaultInstance()))
+                  com.mcp.server.v1.ResourceListChangedNotification.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.google.protobuf.Empty.getDefaultInstance()))
               .setSchemaDescriptor(new ServerNotificationServiceMethodDescriptorSupplier("ResourceListChanged"))
@@ -170,27 +170,27 @@ public final class ServerNotificationServiceGrpc {
     return getResourceListChangedMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<org.mcp.server.resources.ResourceUpdatedNotification,
+  private static volatile io.grpc.MethodDescriptor<com.mcp.server.v1.ResourceUpdatedNotification,
       com.google.protobuf.Empty> getResourceUpdatedMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "ResourceUpdated",
-      requestType = org.mcp.server.resources.ResourceUpdatedNotification.class,
+      requestType = com.mcp.server.v1.ResourceUpdatedNotification.class,
       responseType = com.google.protobuf.Empty.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<org.mcp.server.resources.ResourceUpdatedNotification,
+  public static io.grpc.MethodDescriptor<com.mcp.server.v1.ResourceUpdatedNotification,
       com.google.protobuf.Empty> getResourceUpdatedMethod() {
-    io.grpc.MethodDescriptor<org.mcp.server.resources.ResourceUpdatedNotification, com.google.protobuf.Empty> getResourceUpdatedMethod;
+    io.grpc.MethodDescriptor<com.mcp.server.v1.ResourceUpdatedNotification, com.google.protobuf.Empty> getResourceUpdatedMethod;
     if ((getResourceUpdatedMethod = ServerNotificationServiceGrpc.getResourceUpdatedMethod) == null) {
       synchronized (ServerNotificationServiceGrpc.class) {
         if ((getResourceUpdatedMethod = ServerNotificationServiceGrpc.getResourceUpdatedMethod) == null) {
           ServerNotificationServiceGrpc.getResourceUpdatedMethod = getResourceUpdatedMethod =
-              io.grpc.MethodDescriptor.<org.mcp.server.resources.ResourceUpdatedNotification, com.google.protobuf.Empty>newBuilder()
+              io.grpc.MethodDescriptor.<com.mcp.server.v1.ResourceUpdatedNotification, com.google.protobuf.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ResourceUpdated"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.mcp.server.resources.ResourceUpdatedNotification.getDefaultInstance()))
+                  com.mcp.server.v1.ResourceUpdatedNotification.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.google.protobuf.Empty.getDefaultInstance()))
               .setSchemaDescriptor(new ServerNotificationServiceMethodDescriptorSupplier("ResourceUpdated"))
@@ -201,27 +201,27 @@ public final class ServerNotificationServiceGrpc {
     return getResourceUpdatedMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<org.mcp.server.resources.ToolListChangedNotification,
+  private static volatile io.grpc.MethodDescriptor<com.mcp.server.v1.ToolListChangedNotification,
       com.google.protobuf.Empty> getToolListChangedMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "ToolListChanged",
-      requestType = org.mcp.server.resources.ToolListChangedNotification.class,
+      requestType = com.mcp.server.v1.ToolListChangedNotification.class,
       responseType = com.google.protobuf.Empty.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<org.mcp.server.resources.ToolListChangedNotification,
+  public static io.grpc.MethodDescriptor<com.mcp.server.v1.ToolListChangedNotification,
       com.google.protobuf.Empty> getToolListChangedMethod() {
-    io.grpc.MethodDescriptor<org.mcp.server.resources.ToolListChangedNotification, com.google.protobuf.Empty> getToolListChangedMethod;
+    io.grpc.MethodDescriptor<com.mcp.server.v1.ToolListChangedNotification, com.google.protobuf.Empty> getToolListChangedMethod;
     if ((getToolListChangedMethod = ServerNotificationServiceGrpc.getToolListChangedMethod) == null) {
       synchronized (ServerNotificationServiceGrpc.class) {
         if ((getToolListChangedMethod = ServerNotificationServiceGrpc.getToolListChangedMethod) == null) {
           ServerNotificationServiceGrpc.getToolListChangedMethod = getToolListChangedMethod =
-              io.grpc.MethodDescriptor.<org.mcp.server.resources.ToolListChangedNotification, com.google.protobuf.Empty>newBuilder()
+              io.grpc.MethodDescriptor.<com.mcp.server.v1.ToolListChangedNotification, com.google.protobuf.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ToolListChanged"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.mcp.server.resources.ToolListChangedNotification.getDefaultInstance()))
+                  com.mcp.server.v1.ToolListChangedNotification.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.google.protobuf.Empty.getDefaultInstance()))
               .setSchemaDescriptor(new ServerNotificationServiceMethodDescriptorSupplier("ToolListChanged"))
@@ -303,7 +303,7 @@ public final class ServerNotificationServiceGrpc {
      * Notify that a previously-issued request is being cancelled.
      * </pre>
      */
-    default void cancelled(org.mcp.server.resources.CancelledNotification request,
+    default void cancelled(com.mcp.server.v1.CancelledNotification request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCancelledMethod(), responseObserver);
     }
@@ -313,7 +313,7 @@ public final class ServerNotificationServiceGrpc {
      * Send a log message to the client.
      * </pre>
      */
-    default void message(org.mcp.server.resources.LoggingMessageNotification request,
+    default void message(com.mcp.server.v1.LoggingMessageNotification request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMessageMethod(), responseObserver);
     }
@@ -323,7 +323,7 @@ public final class ServerNotificationServiceGrpc {
      * Send a progress notification.
      * </pre>
      */
-    default void progress(org.mcp.server.resources.ProgressNotification request,
+    default void progress(com.mcp.server.v1.ProgressNotification request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getProgressMethod(), responseObserver);
     }
@@ -333,7 +333,7 @@ public final class ServerNotificationServiceGrpc {
      * Notify that the list of prompts has changed.
      * </pre>
      */
-    default void promptListChanged(org.mcp.server.resources.PromptListChangedNotification request,
+    default void promptListChanged(com.mcp.server.v1.PromptListChangedNotification request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPromptListChangedMethod(), responseObserver);
     }
@@ -343,7 +343,7 @@ public final class ServerNotificationServiceGrpc {
      * Notify that the list of resources has changed.
      * </pre>
      */
-    default void resourceListChanged(org.mcp.server.resources.ResourceListChangedNotification request,
+    default void resourceListChanged(com.mcp.server.v1.ResourceListChangedNotification request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getResourceListChangedMethod(), responseObserver);
     }
@@ -353,7 +353,7 @@ public final class ServerNotificationServiceGrpc {
      * Notify that a specific resource has been updated.
      * </pre>
      */
-    default void resourceUpdated(org.mcp.server.resources.ResourceUpdatedNotification request,
+    default void resourceUpdated(com.mcp.server.v1.ResourceUpdatedNotification request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getResourceUpdatedMethod(), responseObserver);
     }
@@ -363,7 +363,7 @@ public final class ServerNotificationServiceGrpc {
      * Notify that the list of tools has changed.
      * </pre>
      */
-    default void toolListChanged(org.mcp.server.resources.ToolListChangedNotification request,
+    default void toolListChanged(com.mcp.server.v1.ToolListChangedNotification request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getToolListChangedMethod(), responseObserver);
     }
@@ -407,7 +407,7 @@ public final class ServerNotificationServiceGrpc {
      * Notify that a previously-issued request is being cancelled.
      * </pre>
      */
-    public void cancelled(org.mcp.server.resources.CancelledNotification request,
+    public void cancelled(com.mcp.server.v1.CancelledNotification request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCancelledMethod(), getCallOptions()), request, responseObserver);
@@ -418,7 +418,7 @@ public final class ServerNotificationServiceGrpc {
      * Send a log message to the client.
      * </pre>
      */
-    public void message(org.mcp.server.resources.LoggingMessageNotification request,
+    public void message(com.mcp.server.v1.LoggingMessageNotification request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getMessageMethod(), getCallOptions()), request, responseObserver);
@@ -429,7 +429,7 @@ public final class ServerNotificationServiceGrpc {
      * Send a progress notification.
      * </pre>
      */
-    public void progress(org.mcp.server.resources.ProgressNotification request,
+    public void progress(com.mcp.server.v1.ProgressNotification request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getProgressMethod(), getCallOptions()), request, responseObserver);
@@ -440,7 +440,7 @@ public final class ServerNotificationServiceGrpc {
      * Notify that the list of prompts has changed.
      * </pre>
      */
-    public void promptListChanged(org.mcp.server.resources.PromptListChangedNotification request,
+    public void promptListChanged(com.mcp.server.v1.PromptListChangedNotification request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getPromptListChangedMethod(), getCallOptions()), request, responseObserver);
@@ -451,7 +451,7 @@ public final class ServerNotificationServiceGrpc {
      * Notify that the list of resources has changed.
      * </pre>
      */
-    public void resourceListChanged(org.mcp.server.resources.ResourceListChangedNotification request,
+    public void resourceListChanged(com.mcp.server.v1.ResourceListChangedNotification request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getResourceListChangedMethod(), getCallOptions()), request, responseObserver);
@@ -462,7 +462,7 @@ public final class ServerNotificationServiceGrpc {
      * Notify that a specific resource has been updated.
      * </pre>
      */
-    public void resourceUpdated(org.mcp.server.resources.ResourceUpdatedNotification request,
+    public void resourceUpdated(com.mcp.server.v1.ResourceUpdatedNotification request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getResourceUpdatedMethod(), getCallOptions()), request, responseObserver);
@@ -473,7 +473,7 @@ public final class ServerNotificationServiceGrpc {
      * Notify that the list of tools has changed.
      * </pre>
      */
-    public void toolListChanged(org.mcp.server.resources.ToolListChangedNotification request,
+    public void toolListChanged(com.mcp.server.v1.ToolListChangedNotification request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getToolListChangedMethod(), getCallOptions()), request, responseObserver);
@@ -504,7 +504,7 @@ public final class ServerNotificationServiceGrpc {
      * Notify that a previously-issued request is being cancelled.
      * </pre>
      */
-    public com.google.protobuf.Empty cancelled(org.mcp.server.resources.CancelledNotification request) throws io.grpc.StatusException {
+    public com.google.protobuf.Empty cancelled(com.mcp.server.v1.CancelledNotification request) throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCancelledMethod(), getCallOptions(), request);
     }
@@ -514,7 +514,7 @@ public final class ServerNotificationServiceGrpc {
      * Send a log message to the client.
      * </pre>
      */
-    public com.google.protobuf.Empty message(org.mcp.server.resources.LoggingMessageNotification request) throws io.grpc.StatusException {
+    public com.google.protobuf.Empty message(com.mcp.server.v1.LoggingMessageNotification request) throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getMessageMethod(), getCallOptions(), request);
     }
@@ -524,7 +524,7 @@ public final class ServerNotificationServiceGrpc {
      * Send a progress notification.
      * </pre>
      */
-    public com.google.protobuf.Empty progress(org.mcp.server.resources.ProgressNotification request) throws io.grpc.StatusException {
+    public com.google.protobuf.Empty progress(com.mcp.server.v1.ProgressNotification request) throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getProgressMethod(), getCallOptions(), request);
     }
@@ -534,7 +534,7 @@ public final class ServerNotificationServiceGrpc {
      * Notify that the list of prompts has changed.
      * </pre>
      */
-    public com.google.protobuf.Empty promptListChanged(org.mcp.server.resources.PromptListChangedNotification request) throws io.grpc.StatusException {
+    public com.google.protobuf.Empty promptListChanged(com.mcp.server.v1.PromptListChangedNotification request) throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getPromptListChangedMethod(), getCallOptions(), request);
     }
@@ -544,7 +544,7 @@ public final class ServerNotificationServiceGrpc {
      * Notify that the list of resources has changed.
      * </pre>
      */
-    public com.google.protobuf.Empty resourceListChanged(org.mcp.server.resources.ResourceListChangedNotification request) throws io.grpc.StatusException {
+    public com.google.protobuf.Empty resourceListChanged(com.mcp.server.v1.ResourceListChangedNotification request) throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getResourceListChangedMethod(), getCallOptions(), request);
     }
@@ -554,7 +554,7 @@ public final class ServerNotificationServiceGrpc {
      * Notify that a specific resource has been updated.
      * </pre>
      */
-    public com.google.protobuf.Empty resourceUpdated(org.mcp.server.resources.ResourceUpdatedNotification request) throws io.grpc.StatusException {
+    public com.google.protobuf.Empty resourceUpdated(com.mcp.server.v1.ResourceUpdatedNotification request) throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getResourceUpdatedMethod(), getCallOptions(), request);
     }
@@ -564,7 +564,7 @@ public final class ServerNotificationServiceGrpc {
      * Notify that the list of tools has changed.
      * </pre>
      */
-    public com.google.protobuf.Empty toolListChanged(org.mcp.server.resources.ToolListChangedNotification request) throws io.grpc.StatusException {
+    public com.google.protobuf.Empty toolListChanged(com.mcp.server.v1.ToolListChangedNotification request) throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getToolListChangedMethod(), getCallOptions(), request);
     }
@@ -594,7 +594,7 @@ public final class ServerNotificationServiceGrpc {
      * Notify that a previously-issued request is being cancelled.
      * </pre>
      */
-    public com.google.protobuf.Empty cancelled(org.mcp.server.resources.CancelledNotification request) {
+    public com.google.protobuf.Empty cancelled(com.mcp.server.v1.CancelledNotification request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCancelledMethod(), getCallOptions(), request);
     }
@@ -604,7 +604,7 @@ public final class ServerNotificationServiceGrpc {
      * Send a log message to the client.
      * </pre>
      */
-    public com.google.protobuf.Empty message(org.mcp.server.resources.LoggingMessageNotification request) {
+    public com.google.protobuf.Empty message(com.mcp.server.v1.LoggingMessageNotification request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getMessageMethod(), getCallOptions(), request);
     }
@@ -614,7 +614,7 @@ public final class ServerNotificationServiceGrpc {
      * Send a progress notification.
      * </pre>
      */
-    public com.google.protobuf.Empty progress(org.mcp.server.resources.ProgressNotification request) {
+    public com.google.protobuf.Empty progress(com.mcp.server.v1.ProgressNotification request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getProgressMethod(), getCallOptions(), request);
     }
@@ -624,7 +624,7 @@ public final class ServerNotificationServiceGrpc {
      * Notify that the list of prompts has changed.
      * </pre>
      */
-    public com.google.protobuf.Empty promptListChanged(org.mcp.server.resources.PromptListChangedNotification request) {
+    public com.google.protobuf.Empty promptListChanged(com.mcp.server.v1.PromptListChangedNotification request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getPromptListChangedMethod(), getCallOptions(), request);
     }
@@ -634,7 +634,7 @@ public final class ServerNotificationServiceGrpc {
      * Notify that the list of resources has changed.
      * </pre>
      */
-    public com.google.protobuf.Empty resourceListChanged(org.mcp.server.resources.ResourceListChangedNotification request) {
+    public com.google.protobuf.Empty resourceListChanged(com.mcp.server.v1.ResourceListChangedNotification request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getResourceListChangedMethod(), getCallOptions(), request);
     }
@@ -644,7 +644,7 @@ public final class ServerNotificationServiceGrpc {
      * Notify that a specific resource has been updated.
      * </pre>
      */
-    public com.google.protobuf.Empty resourceUpdated(org.mcp.server.resources.ResourceUpdatedNotification request) {
+    public com.google.protobuf.Empty resourceUpdated(com.mcp.server.v1.ResourceUpdatedNotification request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getResourceUpdatedMethod(), getCallOptions(), request);
     }
@@ -654,7 +654,7 @@ public final class ServerNotificationServiceGrpc {
      * Notify that the list of tools has changed.
      * </pre>
      */
-    public com.google.protobuf.Empty toolListChanged(org.mcp.server.resources.ToolListChangedNotification request) {
+    public com.google.protobuf.Empty toolListChanged(com.mcp.server.v1.ToolListChangedNotification request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getToolListChangedMethod(), getCallOptions(), request);
     }
@@ -685,7 +685,7 @@ public final class ServerNotificationServiceGrpc {
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> cancelled(
-        org.mcp.server.resources.CancelledNotification request) {
+        com.mcp.server.v1.CancelledNotification request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCancelledMethod(), getCallOptions()), request);
     }
@@ -696,7 +696,7 @@ public final class ServerNotificationServiceGrpc {
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> message(
-        org.mcp.server.resources.LoggingMessageNotification request) {
+        com.mcp.server.v1.LoggingMessageNotification request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getMessageMethod(), getCallOptions()), request);
     }
@@ -707,7 +707,7 @@ public final class ServerNotificationServiceGrpc {
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> progress(
-        org.mcp.server.resources.ProgressNotification request) {
+        com.mcp.server.v1.ProgressNotification request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getProgressMethod(), getCallOptions()), request);
     }
@@ -718,7 +718,7 @@ public final class ServerNotificationServiceGrpc {
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> promptListChanged(
-        org.mcp.server.resources.PromptListChangedNotification request) {
+        com.mcp.server.v1.PromptListChangedNotification request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getPromptListChangedMethod(), getCallOptions()), request);
     }
@@ -729,7 +729,7 @@ public final class ServerNotificationServiceGrpc {
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> resourceListChanged(
-        org.mcp.server.resources.ResourceListChangedNotification request) {
+        com.mcp.server.v1.ResourceListChangedNotification request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getResourceListChangedMethod(), getCallOptions()), request);
     }
@@ -740,7 +740,7 @@ public final class ServerNotificationServiceGrpc {
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> resourceUpdated(
-        org.mcp.server.resources.ResourceUpdatedNotification request) {
+        com.mcp.server.v1.ResourceUpdatedNotification request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getResourceUpdatedMethod(), getCallOptions()), request);
     }
@@ -751,7 +751,7 @@ public final class ServerNotificationServiceGrpc {
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> toolListChanged(
-        org.mcp.server.resources.ToolListChangedNotification request) {
+        com.mcp.server.v1.ToolListChangedNotification request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getToolListChangedMethod(), getCallOptions()), request);
     }
@@ -783,31 +783,31 @@ public final class ServerNotificationServiceGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_CANCELLED:
-          serviceImpl.cancelled((org.mcp.server.resources.CancelledNotification) request,
+          serviceImpl.cancelled((com.mcp.server.v1.CancelledNotification) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_MESSAGE:
-          serviceImpl.message((org.mcp.server.resources.LoggingMessageNotification) request,
+          serviceImpl.message((com.mcp.server.v1.LoggingMessageNotification) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_PROGRESS:
-          serviceImpl.progress((org.mcp.server.resources.ProgressNotification) request,
+          serviceImpl.progress((com.mcp.server.v1.ProgressNotification) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_PROMPT_LIST_CHANGED:
-          serviceImpl.promptListChanged((org.mcp.server.resources.PromptListChangedNotification) request,
+          serviceImpl.promptListChanged((com.mcp.server.v1.PromptListChangedNotification) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_RESOURCE_LIST_CHANGED:
-          serviceImpl.resourceListChanged((org.mcp.server.resources.ResourceListChangedNotification) request,
+          serviceImpl.resourceListChanged((com.mcp.server.v1.ResourceListChangedNotification) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_RESOURCE_UPDATED:
-          serviceImpl.resourceUpdated((org.mcp.server.resources.ResourceUpdatedNotification) request,
+          serviceImpl.resourceUpdated((com.mcp.server.v1.ResourceUpdatedNotification) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_TOOL_LIST_CHANGED:
-          serviceImpl.toolListChanged((org.mcp.server.resources.ToolListChangedNotification) request,
+          serviceImpl.toolListChanged((com.mcp.server.v1.ToolListChangedNotification) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         default:
@@ -832,49 +832,49 @@ public final class ServerNotificationServiceGrpc {
           getCancelledMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              org.mcp.server.resources.CancelledNotification,
+              com.mcp.server.v1.CancelledNotification,
               com.google.protobuf.Empty>(
                 service, METHODID_CANCELLED)))
         .addMethod(
           getMessageMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              org.mcp.server.resources.LoggingMessageNotification,
+              com.mcp.server.v1.LoggingMessageNotification,
               com.google.protobuf.Empty>(
                 service, METHODID_MESSAGE)))
         .addMethod(
           getProgressMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              org.mcp.server.resources.ProgressNotification,
+              com.mcp.server.v1.ProgressNotification,
               com.google.protobuf.Empty>(
                 service, METHODID_PROGRESS)))
         .addMethod(
           getPromptListChangedMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              org.mcp.server.resources.PromptListChangedNotification,
+              com.mcp.server.v1.PromptListChangedNotification,
               com.google.protobuf.Empty>(
                 service, METHODID_PROMPT_LIST_CHANGED)))
         .addMethod(
           getResourceListChangedMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              org.mcp.server.resources.ResourceListChangedNotification,
+              com.mcp.server.v1.ResourceListChangedNotification,
               com.google.protobuf.Empty>(
                 service, METHODID_RESOURCE_LIST_CHANGED)))
         .addMethod(
           getResourceUpdatedMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              org.mcp.server.resources.ResourceUpdatedNotification,
+              com.mcp.server.v1.ResourceUpdatedNotification,
               com.google.protobuf.Empty>(
                 service, METHODID_RESOURCE_UPDATED)))
         .addMethod(
           getToolListChangedMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              org.mcp.server.resources.ToolListChangedNotification,
+              com.mcp.server.v1.ToolListChangedNotification,
               com.google.protobuf.Empty>(
                 service, METHODID_TOOL_LIST_CHANGED)))
         .build();

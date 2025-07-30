@@ -433,8 +433,8 @@ const file_mcp_server_v1_json_rpc_proto_rawDesc = "" +
 	"\x0fJSONRPCResponse\x12\x18\n" +
 	"\ajsonrpc\x18\x01 \x01(\tR\ajsonrpc\x12(\n" +
 	"\x02id\x18\x02 \x01(\v2\x18.mcp.server.v1.RequestIdR\x02id\x12-\n" +
-	"\x06result\x18\x03 \x01(\v2\x15.mcp.server.v1.ResultR\x06resultB\x90\x01\n" +
-	"\x18org.mcp.server.resourcesB\fJsonRpcProtoH\x01P\x01Z\x0epkg/mcp/server\xa2\x02\x03MSX\xaa\x02\rMcp.Server.V1\xca\x02\rMcp\\Server\\V1\xe2\x02\x19Mcp\\Server\\V1\\GPBMetadata\xea\x02\x0fMcp::Server::V1b\beditionsp\xe8\a"
+	"\x06result\x18\x03 \x01(\v2\x15.mcp.server.v1.ResultR\x06resultB\x8c\x01\n" +
+	"\x14org.mcp.server.modelB\fJsonRpcProtoH\x01P\x01Z\x0epkg/mcp/server\xa2\x02\x03MSX\xaa\x02\rMcp.Server.V1\xca\x02\rMcp\\Server\\V1\xe2\x02\x19Mcp\\Server\\V1\\GPBMetadata\xea\x02\x0fMcp::Server::V1b\beditionsp\xe8\a"
 
 var (
 	file_mcp_server_v1_json_rpc_proto_rawDescOnce sync.Once

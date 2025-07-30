@@ -761,8 +761,8 @@ const file_mcp_client_v1_common_proto_rawDesc = "" +
 	"\tROLE_USER\x10\x01\x1a\t\x82\xc6\xce/\x04user\x12\"\n" +
 	"\x0eROLE_ASSISTANT\x10\x02\x1a\x0e\x82\xc6\xce/\tassistant:E\n" +
 	"\vstring_name\x12!.google.protobuf.EnumValueOptions\x18\xe0\xe8\xf9\x05 \x01(\tR\n" +
-	"stringNameB\x8f\x01\n" +
-	"\x18org.mcp.client.resourcesB\vCommonProtoH\x01P\x01Z\x0epkg/mcp/client\xa2\x02\x03MCX\xaa\x02\rMcp.Client.V1\xca\x02\rMcp\\Client\\V1\xe2\x02\x19Mcp\\Client\\V1\\GPBMetadata\xea\x02\x0fMcp::Client::V1b\beditionsp\xe8\a"
+	"stringNameB\x8b\x01\n" +
+	"\x14org.mcp.client.modelB\vCommonProtoH\x01P\x01Z\x0epkg/mcp/client\xa2\x02\x03MCX\xaa\x02\rMcp.Client.V1\xca\x02\rMcp\\Client\\V1\xe2\x02\x19Mcp\\Client\\V1\\GPBMetadata\xea\x02\x0fMcp::Client::V1b\beditionsp\xe8\a"
 
 var (
 	file_mcp_client_v1_common_proto_rawDescOnce sync.Once

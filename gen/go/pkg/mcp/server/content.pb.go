@@ -747,8 +747,8 @@ const file_mcp_server_v1_content_proto_rawDesc = "" +
 	"\x04type\x18\x01 \x01(\tR\x04type\x12\x12\n" +
 	"\x04text\x18\x02 \x01(\tR\x04text\x12<\n" +
 	"\vannotations\x18\x03 \x01(\v2\x1a.mcp.server.v1.AnnotationsR\vannotations\x12,\n" +
-	"\x05_meta\x18\x04 \x01(\v2\x17.google.protobuf.StructR\x04MetaB\x90\x01\n" +
-	"\x18org.mcp.server.resourcesB\fContentProtoH\x01P\x01Z\x0epkg/mcp/server\xa2\x02\x03MSX\xaa\x02\rMcp.Server.V1\xca\x02\rMcp\\Server\\V1\xe2\x02\x19Mcp\\Server\\V1\\GPBMetadata\xea\x02\x0fMcp::Server::V1b\beditionsp\xe8\a"
+	"\x05_meta\x18\x04 \x01(\v2\x17.google.protobuf.StructR\x04MetaB\x8c\x01\n" +
+	"\x14org.mcp.server.modelB\fContentProtoH\x01P\x01Z\x0epkg/mcp/server\xa2\x02\x03MSX\xaa\x02\rMcp.Server.V1\xca\x02\rMcp\\Server\\V1\xe2\x02\x19Mcp\\Server\\V1\\GPBMetadata\xea\x02\x0fMcp::Server::V1b\beditionsp\xe8\a"
 
 var (
 	file_mcp_server_v1_content_proto_rawDescOnce sync.Once

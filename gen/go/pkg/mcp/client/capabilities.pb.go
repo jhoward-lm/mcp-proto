@@ -156,8 +156,8 @@ const file_mcp_client_v1_capabilities_proto_rawDesc = "" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12-\n" +
 	"\x05value\x18\x02 \x01(\v2\x17.google.protobuf.StructR\x05value:\x028\x01\x1a*\n" +
 	"\x05Roots\x12!\n" +
-	"\flist_changed\x18\x01 \x01(\bR\vlistChangedB\x95\x01\n" +
-	"\x18org.mcp.client.resourcesB\x11CapabilitiesProtoH\x01P\x01Z\x0epkg/mcp/client\xa2\x02\x03MCX\xaa\x02\rMcp.Client.V1\xca\x02\rMcp\\Client\\V1\xe2\x02\x19Mcp\\Client\\V1\\GPBMetadata\xea\x02\x0fMcp::Client::V1b\beditionsp\xe8\a"
+	"\flist_changed\x18\x01 \x01(\bR\vlistChangedB\x91\x01\n" +
+	"\x14org.mcp.client.modelB\x11CapabilitiesProtoH\x01P\x01Z\x0epkg/mcp/client\xa2\x02\x03MCX\xaa\x02\rMcp.Client.V1\xca\x02\rMcp\\Client\\V1\xe2\x02\x19Mcp\\Client\\V1\\GPBMetadata\xea\x02\x0fMcp::Client::V1b\beditionsp\xe8\a"
 
 var (
 	file_mcp_client_v1_capabilities_proto_rawDescOnce sync.Once

@@ -1699,8 +1699,8 @@ const file_mcp_client_v1_requests_proto_rawDesc = "" +
 	"\x06method\x18\x01 \x01(\t:\x15resources/unsubscribeR\x06method\x12@\n" +
 	"\x06params\x18\x02 \x01(\v2(.mcp.client.v1.UnsubscribeRequest.ParamsR\x06params\x1a\x1a\n" +
 	"\x06Params\x12\x10\n" +
-	"\x03uri\x18\x01 \x01(\tR\x03uriB\x91\x01\n" +
-	"\x18org.mcp.client.resourcesB\rRequestsProtoH\x01P\x01Z\x0epkg/mcp/client\xa2\x02\x03MCX\xaa\x02\rMcp.Client.V1\xca\x02\rMcp\\Client\\V1\xe2\x02\x19Mcp\\Client\\V1\\GPBMetadata\xea\x02\x0fMcp::Client::V1b\beditionsp\xe8\a"
+	"\x03uri\x18\x01 \x01(\tR\x03uriB\x8d\x01\n" +
+	"\x14org.mcp.client.modelB\rRequestsProtoH\x01P\x01Z\x0epkg/mcp/client\xa2\x02\x03MCX\xaa\x02\rMcp.Client.V1\xca\x02\rMcp\\Client\\V1\xe2\x02\x19Mcp\\Client\\V1\\GPBMetadata\xea\x02\x0fMcp::Client::V1b\beditionsp\xe8\a"
 
 var (
 	file_mcp_client_v1_requests_proto_rawDescOnce sync.Once

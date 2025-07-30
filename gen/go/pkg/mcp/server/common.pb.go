@@ -798,8 +798,8 @@ const file_mcp_server_v1_common_proto_rawDesc = "" +
 	"\x82\xbcղ\a\x04user\x12#\n" +
 	"\x0eROLE_ASSISTANT\x10\x02\x1a\x0f\x82\xbcղ\a\tassistant:E\n" +
 	"\vstring_name\x12!.google.protobuf.EnumValueOptions\x18\xc0תv \x01(\tR\n" +
-	"stringNameB\x8f\x01\n" +
-	"\x18org.mcp.server.resourcesB\vCommonProtoH\x01P\x01Z\x0epkg/mcp/server\xa2\x02\x03MSX\xaa\x02\rMcp.Server.V1\xca\x02\rMcp\\Server\\V1\xe2\x02\x19Mcp\\Server\\V1\\GPBMetadata\xea\x02\x0fMcp::Server::V1b\beditionsp\xe8\a"
+	"stringNameB\x8b\x01\n" +
+	"\x14org.mcp.server.modelB\vCommonProtoH\x01P\x01Z\x0epkg/mcp/server\xa2\x02\x03MSX\xaa\x02\rMcp.Server.V1\xca\x02\rMcp\\Server\\V1\xe2\x02\x19Mcp\\Server\\V1\\GPBMetadata\xea\x02\x0fMcp::Server::V1b\beditionsp\xe8\a"
 
 var (
 	file_mcp_server_v1_common_proto_rawDescOnce sync.Once

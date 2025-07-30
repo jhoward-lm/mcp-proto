@@ -18,28 +18,8 @@ managed:
       path: mcp/server/v1
 
     - file_option: java_package
-      value: org.mcp.api.model
-      path: mcp/api/v1
-
-    - file_option: java_package
       value: org.mcp.api.resources
       path: mcp/api/v1
-
-    - file_option: java_package
-      value: org.mcp.client.model
-      path: mcp/client/v1
-
-    - file_option: java_package
-      value: org.mcp.client.resources
-      path: mcp/client/v1
-
-    - file_option: java_package
-      value: org.mcp.server.model
-      path: mcp/server/v1
-
-    - file_option: java_package
-      value: org.mcp.server.resources
-      path: mcp/server/v1
 
 plugins:
   # Go

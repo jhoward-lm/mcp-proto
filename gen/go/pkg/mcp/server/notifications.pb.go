@@ -690,8 +690,8 @@ const file_mcp_server_v1_notifications_proto_rawDesc = "" +
 	"\x06Params\x12\x10\n" +
 	"\x03uri\x18\x01 \x01(\tR\x03uri\"W\n" +
 	"\x1bToolListChangedNotification\x128\n" +
-	"\x06method\x18\x01 \x01(\t: notifications/tools/list_changedR\x06methodB\x96\x01\n" +
-	"\x18org.mcp.server.resourcesB\x12NotificationsProtoH\x01P\x01Z\x0epkg/mcp/server\xa2\x02\x03MSX\xaa\x02\rMcp.Server.V1\xca\x02\rMcp\\Server\\V1\xe2\x02\x19Mcp\\Server\\V1\\GPBMetadata\xea\x02\x0fMcp::Server::V1b\beditionsp\xe8\a"
+	"\x06method\x18\x01 \x01(\t: notifications/tools/list_changedR\x06methodB\x92\x01\n" +
+	"\x14org.mcp.server.modelB\x12NotificationsProtoH\x01P\x01Z\x0epkg/mcp/server\xa2\x02\x03MSX\xaa\x02\rMcp.Server.V1\xca\x02\rMcp\\Server\\V1\xe2\x02\x19Mcp\\Server\\V1\\GPBMetadata\xea\x02\x0fMcp::Server::V1b\beditionsp\xe8\a"
 
 var (
 	file_mcp_server_v1_notifications_proto_rawDescOnce sync.Once

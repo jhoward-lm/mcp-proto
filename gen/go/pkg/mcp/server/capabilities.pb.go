@@ -282,8 +282,8 @@ const file_mcp_server_v1_capabilities_proto_rawDesc = "" +
 	"\flist_changed\x18\x01 \x01(\bR\vlistChanged\x12\x1c\n" +
 	"\tsubscribe\x18\x02 \x01(\bR\tsubscribe\x1a*\n" +
 	"\x05Tools\x12!\n" +
-	"\flist_changed\x18\x01 \x01(\bR\vlistChangedB\x95\x01\n" +
-	"\x18org.mcp.server.resourcesB\x11CapabilitiesProtoH\x01P\x01Z\x0epkg/mcp/server\xa2\x02\x03MSX\xaa\x02\rMcp.Server.V1\xca\x02\rMcp\\Server\\V1\xe2\x02\x19Mcp\\Server\\V1\\GPBMetadata\xea\x02\x0fMcp::Server::V1b\beditionsp\xe8\a"
+	"\flist_changed\x18\x01 \x01(\bR\vlistChangedB\x91\x01\n" +
+	"\x14org.mcp.server.modelB\x11CapabilitiesProtoH\x01P\x01Z\x0epkg/mcp/server\xa2\x02\x03MSX\xaa\x02\rMcp.Server.V1\xca\x02\rMcp\\Server\\V1\xe2\x02\x19Mcp\\Server\\V1\\GPBMetadata\xea\x02\x0fMcp::Server::V1b\beditionsp\xe8\a"
 
 var (
 	file_mcp_server_v1_capabilities_proto_rawDescOnce sync.Once
