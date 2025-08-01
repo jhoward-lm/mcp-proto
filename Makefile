@@ -20,7 +20,7 @@ OS      ?= linux
 ARCH    ?= amd64
 EXE_EXT :=
 
-BUF_VERSION              := 1.55.1
+BUF_VERSION              := 1.56.0
 PROTOC_GO_GRPC_VERSION   := 1.5.1
 PROTOC_GO_VERSION        := 1.36.6
 PROTOC_JAVA_GRPC_VERSION := 1.74.0
@@ -68,9 +68,9 @@ else
 	endif
 endif
 
-PROTOC_FILENAME               := ${addsuffix .zip,${PROTOC_FILENAME}}
+PROTOC_FILENAME               := ${addsuffix .zip, ${PROTOC_FILENAME}}
 PROTOC_DOWNLOAD_URL           := https://github.com/protocolbuffers/protobuf/releases/download/v${PROTOC_VERSION}/${PROTOC_FILENAME}
-PROTOC_JAVA_GRPC_FILENAME     := ${addsuffix .exe,${PROTOC_JAVA_GRPC_FILENAME}}
+PROTOC_JAVA_GRPC_FILENAME     := ${addsuffix .exe, ${PROTOC_JAVA_GRPC_FILENAME}}
 PROTOC_JAVA_GRPC_DOWNLOAD_URL := https://repo1.maven.org/maven2/io/grpc/protoc-gen-grpc-java/${PROTOC_JAVA_GRPC_VERSION}/${PROTOC_JAVA_GRPC_FILENAME}
 
 #@ Tools
@@ -84,14 +84,12 @@ clean: # Clean the working directory
 	@${RM} -r gen{go,java,python}
 	@find ${PWD} -name "*.log" -exec ${RM} {} \;
 
-TOOL_NAMES := protoc protoc-gen-go protoc-gen-go-grpc protoc-gen-grpc-java buf
-TOOL_PATHS := ${addprefix ${TOOLS_BIN}/, ${addsuffix ${EXE_EXT}, ${TOOL_NAMES}}}
+TOOL_NAMES := buf protoc \
+  protoc-gen-buf-breaking protoc-gen-buf-lint \
+  protoc-gen-go protoc-gen-go-grpc \
+  protoc-gen-grpc-java
 
-test-url:
-	@echo "PROTOC_DOWNLOAD_URL=${PROTOC_DOWNLOAD_URL}"
-	@echo "PROTOC_JAVA_GRPC_DOWNLOAD_URL=${PROTOC_JAVA_GRPC_DOWNLOAD_URL}"
-	@echo "EXE_EXT=${EXE_EXT}"
-	@tool_paths=(${TOOL_PATHS}) && printf "%s\n" "$${tool_paths[@]}"
+TOOL_PATHS := ${addprefix ${TOOLS_BIN}/, ${addsuffix ${EXE_EXT}, ${TOOL_NAMES}}}
 
 .PHONY: install
 install: tools proto-libs # Install development tools and dependencies
@@ -100,7 +98,7 @@ install: tools proto-libs # Install development tools and dependencies
 tools: ${TOOLS_BIN} ${THIRD_PARTY} ${TOOL_PATHS}
 
 .PHONY: proto-libs
-proto-libs: ${THIRD_PARTY} ${THIRD_PARTY}/buf/validate/validate.proto ${THIRD_PARTY}/google/api/*.proto
+proto-libs: ${THIRD_PARTY} ${THIRD_PARTY}/buf/validate/validate.proto ${THIRD_PARTY}/google/api/*.proto ${THIRD_PARTY}/google/protobuf/*.proto
 
 define download_protos
 	@printf "Downloading ${CYAN}${1}${RESET} third-party protos..."
@@ -121,10 +119,32 @@ ${THIRD_PARTY}/buf/validate/validate.proto:
 ${THIRD_PARTY}/google/api/*.proto:
 	${call download_protos,googleapis/googleapis,master,1,googleapis-master/google/api}
 
+${THIRD_PARTY}/google/protobuf/*.proto:
+	${call download_protos,protocolbuffers/protobuf,main,2,protobuf-main/src/google/protobuf}
+
 ${TOOLS_BIN}:
 	@printf "Creating tools directory: ${CYAN}${TOOLS_BIN}${RESET}..."
 	@mkdir -p ${TOOLS_BIN}
 	@printf "${BOLD}${GREEN}DONE${RESET}\n\n"
+
+${TOOLS_BIN}/buf${EXE_EXT} ${TOOLS_BIN}/protoc-gen-buf-breaking${EXE_EXT} ${TOOLS_BIN}/protoc-gen-buf-lint${EXE_EXT}:
+	@printf "Installing ${CYAN}buf${RESET} CLI..."
+
+	@if [[ $${OS} == "windows" ]]; then \
+	  curl --fail --silent --show-error --location \
+	  	--url "${BUF_DOWNLOAD_URL}.zip" --remote-name; \
+	  unzip -d ${TOOLS_BIN} -X -j ${BUF_FILENAME}.zip \
+	    buf/bin/buf${EXE_EXT} \
+		buf/bin/protoc-gen-buf-breaking${EXE_EXT} \
+		buf/bin/protoc-gen-buf-lint${EXE_EXT}; \
+	  rm ${BUF_FILENAME}.zip; \
+	else \
+	  curl --fail --silent --show-error --location \
+	  	--url "${BUF_DOWNLOAD_URL}.tar.gz" | \
+	  	tar xz --directory ${TOOLS_BIN} --strip-components=2 buf/bin; \
+	fi
+
+	@printf "${BOLD}${GREEN}DONE${RESET}\n\n"; \
 
 ${TOOLS_BIN}/protoc${EXE_EXT}:
 	@printf "Installing ${CYAN}protoc${RESET} compiler..."
@@ -152,14 +172,6 @@ ${TOOLS_BIN}/protoc-gen-grpc-java${EXE_EXT}:
 	  --url "${PROTOC_JAVA_GRPC_DOWNLOAD_URL}" \
 	  --output ${TOOLS_BIN}/protoc-gen-grpc-java${EXE_EXT}
 	@chmod +x ${TOOLS_BIN}/protoc-gen-grpc-java${EXE_EXT}
-	@printf "${BOLD}${GREEN}DONE${RESET}\n\n"
-
-${TOOLS_BIN}/buf:
-	@printf "Installing ${CYAN}buf${RESET} CLI..."
-	@curl --fail --silent --show-error --location \
-	  --url "${BUF_DOWNLOAD_URL}" \
-	  --output ${TOOLS_BIN}/buf
-	@chmod +x ${TOOLS_BIN}/buf
 	@printf "${BOLD}${GREEN}DONE${RESET}\n\n"
 
 #@ Build
@@ -192,5 +204,5 @@ lint: install # Check for breaking changes in protocol buffer definitions
 	@printf "Linting protos with ${CYAN}buf${RESET}..."
 	@buf format --diff --exit-code
 	@buf lint
-	@buf breaking --against ${GIT_REMOTE}#branch=main,subdir=proto
+	@buf breaking --against .git#branch=main
 	@printf "${BOLD}${GREEN}DONE${RESET}\n\n"

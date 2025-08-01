@@ -5,7 +5,6 @@
 version: v2
 
 deps:
-  - buf.build/bufbuild/protovalidate
   - buf.build/googleapis/googleapis
 
 modules:
